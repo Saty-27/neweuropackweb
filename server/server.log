@@ -1,0 +1,695 @@
+
+> server@1.0.0 dev
+> nodemon src/server.ts
+
+[33m[nodemon] 3.1.14[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: ts,json[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+Server running on port 5001
+MongoDB Connected successfully.
+(node:32329) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+User connected via socket: l42w4bK3Fr14bUgjAAAC
+User disconnected: l42w4bK3Fr14bUgjAAAC
+User connected via socket: TXqQc0j2eXYCq0lAAAAE
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (/Users/satyangupta/Desktop/JDKK/europack/server/src/server.ts:122:12)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module.m._compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1892:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 5001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+Server running on port 5001
+MongoDB Connected successfully.
+(node:46603) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (/Users/satyangupta/Desktop/JDKK/europack/server/src/server.ts:122:12)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module.m._compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1892:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 5001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🤖 agentic secret storage: https://dotenvx.com/as2
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+Server running on port 5001
+MongoDB Connected successfully.
+(node:47376) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+Server running on port 5001
+MongoDB Connected successfully.
+(node:58189) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🤖 agentic secret storage: https://dotenvx.com/as2
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (/Users/satyangupta/Desktop/JDKK/europack/server/src/server.ts:122:12)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module.m._compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1892:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 5001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+Server running on port 5001
+MongoDB Connected successfully.
+(node:68515) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+Server running on port 5001
+MongoDB Connected successfully.
+(node:68981) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚡️ secrets for agents: https://dotenvx.com/as2
+Server running on port 5001
+MongoDB Connected successfully.
+(node:69316) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🤖 agentic secret storage: https://dotenvx.com/as2
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+Server running on port 5001
+MongoDB Connected successfully.
+(node:69611) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+Server running on port 5001
+MongoDB Connected successfully.
+(node:69811) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (/Users/satyangupta/Desktop/JDKK/europack/server/src/server.ts:122:12)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module.m._compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1892:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 5001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (/Users/satyangupta/Desktop/JDKK/europack/server/src/server.ts:122:12)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module.m._compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1892:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 5001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (/Users/satyangupta/Desktop/JDKK/europack/server/src/server.ts:122:12)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module.m._compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1892:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 5001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+Server running on port 5001
+MongoDB Connected successfully.
+(node:73574) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+Server running on port 5001
+MongoDB Connected successfully.
+(node:73848) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (/Users/satyangupta/Desktop/JDKK/europack/server/src/server.ts:122:12)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module.m._compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1892:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 5001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚡️ secrets for agents: https://dotenvx.com/as2
+Server running on port 5001
+MongoDB Connected successfully.
+(node:74326) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+Server running on port 5001
+MongoDB Connected successfully.
+(node:74605) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (/Users/satyangupta/Desktop/JDKK/europack/server/src/server.ts:122:12)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module.m._compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1892:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 5001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚡️ secrets for agents: https://dotenvx.com/as2
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (/Users/satyangupta/Desktop/JDKK/europack/server/src/server.ts:122:12)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module.m._compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1892:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 5001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+Server running on port 5001
+MongoDB Connected successfully.
+(node:75191) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🤖 agentic secret storage: https://dotenvx.com/as2
+Server running on port 5001
+MongoDB Connected successfully.
+(node:75979) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🤖 agentic secret storage: https://dotenvx.com/as2
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (/Users/satyangupta/Desktop/JDKK/europack/server/src/server.ts:122:12)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module.m._compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1892:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 5001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+Server running on port 5001
+MongoDB Connected successfully.
+(node:86450) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+User connected via socket: HfTVLOEi4yIibcliAAAB
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+Server running on port 5001
+MongoDB Connected successfully.
+(node:86681) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+User connected via socket: mb9QOviL4B034tgNAAAB
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (/Users/satyangupta/Desktop/JDKK/europack/server/src/server.ts:122:12)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module.m._compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1892:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 5001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (/Users/satyangupta/Desktop/JDKK/europack/server/src/server.ts:122:12)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module.m._compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1892:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 5001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (/Users/satyangupta/Desktop/JDKK/europack/server/src/server.ts:124:12)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module.m._compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1892:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 5001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] restarting due to changes...[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (/Users/satyangupta/Desktop/JDKK/europack/server/src/server.ts:124:12)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module.m._compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1892:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 5001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (/Users/satyangupta/Desktop/JDKK/europack/server/src/server.ts:126:12)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module.m._compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1892:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 5001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (/Users/satyangupta/Desktop/JDKK/europack/server/src/server.ts:126:12)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module.m._compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1892:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 5001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (/Users/satyangupta/Desktop/JDKK/europack/server/src/server.ts:126:12)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module.m._compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1892:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 5001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🤖 agentic secret storage: https://dotenvx.com/as2
+Server running on port 5001
+MongoDB Connected successfully.
+(node:92833) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+User connected via socket: LIoy2PX4Z_LHn53dAAAB
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚡️ secrets for agents: https://dotenvx.com/as2
+Server running on port 5001
+MongoDB Connected successfully.
+(node:93181) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+User connected via socket: hCsbNL2MC429A5EJAAAB
+User disconnected: hCsbNL2MC429A5EJAAAB
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+Server running on port 5001
+MongoDB Connected successfully.
+(node:94562) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚡️ secrets for agents: https://dotenvx.com/as2
+Error: listen EADDRINUSE: address already in use :::5001
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at Object.<anonymous> (/Users/satyangupta/Desktop/JDKK/europack/server/src/server.ts:126:12)
+    at Module._compile (node:internal/modules/cjs/loader:1760:14)
+    at Module.m._compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1618:23)
+    at node:internal/modules/cjs/loader:1892:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 5001
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚡️ secrets for agents: https://dotenvx.com/as2
+Server running on port 5001
+MongoDB Connected successfully.
+(node:94831) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+Server running on port 5001
+MongoDB Connected successfully.
+(node:95065) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/analyticsRoutes.ts(3,19): error TS2305: Module '"../middleware/auth"' has no exported member 'admin'.
+
+    at createTSError (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1892:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2305 ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🛠️  run anywhere with `dotenvx run -- yourcommand`
+/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/routes/analyticsRoutes.ts(3,19): error TS2305: Module '"../middleware/auth"' has no exported member 'admin'.
+
+    at createTSError (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1892:10
+    at Object.require.extensions.<computed> [as .ts] (/Users/satyangupta/Desktop/JDKK/europack/server/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 2305 ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  override existing env vars with { override: true }
+Server running on port 5001
+MongoDB Connected successfully.
+(node:96243) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  override existing env vars with { override: true }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  specify custom .env file path with { path: '/custom/path/.env' }
+Server running on port 5002
+MongoDB Connected successfully.
+(node:96634) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🤖 agentic secret storage: https://dotenvx.com/as2
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚡️ secrets for agents: https://dotenvx.com/as2
+Server running on port 5002
+MongoDB Connected successfully.
+(node:96900) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🔐 prevent building .env in docker: https://dotenvx.com/prebuild
+Server running on port 5002
+MongoDB Connected successfully.
+(node:98426) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: 🛡️ auth for agents: https://vestauth.com
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  suppress all logs with { quiet: true }
+Server running on port 5002
+MongoDB Connected successfully.
+(node:98765) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+[dotenv@17.3.1] injecting env (4) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+[dotenv@17.3.1] injecting env (0) from .env -- tip: ⚙️  enable debug logging with { debug: true }
+Server running on port 5002
+MongoDB Connected successfully.
+(node:99005) [MONGOOSE] Warning: mongoose: Duplicate schema index on {"slug":1} for model "CaseStudy". This is often due to declaring an index using both "index: true" and "schema.index()". Please remove the duplicate index definition.
+(Use `node --trace-warnings ...` to show where the warning was created)
