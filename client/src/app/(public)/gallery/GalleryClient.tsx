@@ -54,7 +54,7 @@ export default function GalleryClient({ items, settings }: GalleryClientProps) {
       fullPath = path.startsWith('/') ? path : `/${path}`;
     } else {
       // Handle backend uploads
-      fullPath = `http://localhost:5002/${path}`;
+      fullPath = `https://europackindia.com/${path}`;
     }
     return encodeURI(fullPath);
   };

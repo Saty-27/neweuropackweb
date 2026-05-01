@@ -7,7 +7,7 @@ module.exports = {
       cwd: './server',
       env: {
         NODE_ENV: 'production',
-        PORT: 5001
+        PORT: 5002
       },
       max_memory_restart: '800M',
       node_args: '--max-old-space-size=1024'

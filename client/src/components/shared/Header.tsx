@@ -134,7 +134,7 @@ export default function Header() {
 
       <nav className={`fixed w-full z-[210] bg-white border-b border-slate-100 transition-all duration-300 ${isScrolled ? 'shadow-lg' : ''}`} style={{ top: isScrolled ? 0 : 'auto' }}>
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-[100px]">
+          <div className="flex items-center justify-between h-[85px] lg:h-[100px]">
 
             <div className="flex-1 flex items-center justify-start">
               <Link href="/" className="inline-flex items-center shrink-0 group">

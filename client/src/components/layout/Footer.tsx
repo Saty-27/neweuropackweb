@@ -72,15 +72,11 @@ export default function Footer() {
 
   const ColumnHeader = ({ title, id }: { title: string, id: string }) => (
     <div 
-      className="flex items-center justify-between mb-8 cursor-pointer md:cursor-default"
-      onClick={() => toggleAccordion(id)}
+      className="flex items-center justify-between mb-6 md:mb-8"
     >
-      <h4 className="text-white font-black text-xs uppercase tracking-[0.2em] border-l-4 border-[#FF6600] pl-4">
+      <h4 className="text-white font-black text-[11px] sm:text-xs uppercase tracking-[0.2em] border-l-4 border-[#FF6600] pl-4">
         {title}
       </h4>
-      <div className="md:hidden text-slate-500">
-        {openAccordions[id] ? <Minus size={16} /> : <Plus size={16} />}
-      </div>
     </div>
   );
 
@@ -138,7 +134,7 @@ export default function Footer() {
           {/* Col 2: Quick Links */}
           <div>
             <ColumnHeader title="Quick Links" id="quick-links" />
-            <ul className={`space-y-4 md:block ${openAccordions['quick-links'] ? 'block' : 'hidden'}`}>
+            <ul className="space-y-4">
               {data.quickLinks?.map((link: any, idx: number) => (
                 <li key={idx}>
                   <Link 
@@ -159,7 +155,7 @@ export default function Footer() {
           {/* Col 3: Products (Auto-Sync) */}
           <div className="lg:col-span-1">
             <ColumnHeader title="Our Products" id="products" />
-            <div className={`space-y-6 md:block ${openAccordions['products'] ? 'block' : 'hidden'}`}>
+            <div className="space-y-6">
               {Object.entries(groupedProducts).map(([cat, items]) => (
                 items.length > 0 && (
                   <div key={cat} className="space-y-3">
@@ -185,7 +181,7 @@ export default function Footer() {
           {/* Col 4: Services & Industries */}
           <div>
             <ColumnHeader title="Capabilities" id="capabilities" />
-            <div className={`grid grid-cols-1 gap-8 md:block ${openAccordions['capabilities'] ? 'block' : 'hidden'}`}>
+            <div className="grid grid-cols-1 gap-8">
                <div className="space-y-4">
                  <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Core Services</p>
                  <div className="flex flex-wrap gap-2">
@@ -212,7 +208,7 @@ export default function Footer() {
           {/* Col 5: Head Office */}
           <div>
             <ColumnHeader title="Head Office" id="head-office" />
-            <div className={`space-y-6 md:block ${openAccordions['head-office'] ? 'block' : 'hidden'}`}>
+            <div className="space-y-6">
                <div className="flex gap-4">
                  <MapPin size={20} className="text-[#FF6600] shrink-0" />
                  <p className="text-slate-400 text-sm leading-relaxed">
@@ -238,13 +234,13 @@ export default function Footer() {
           {/* Col 8: Trust + CTA Micro Block */}
           <div>
             <ColumnHeader title="Consultation" id="trust-cta" />
-            <div className={`space-y-6 md:block ${openAccordions['trust-cta'] ? 'block' : 'hidden'}`}>
+            <div className="space-y-6">
                <div className="bg-gradient-to-br from-white/10 to-transparent p-6 rounded-[32px] border border-white/10 relative overflow-hidden group">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-[#FF6600]/10 rounded-full -mr-12 -mt-12 group-hover:scale-125 transition-transform duration-700" />
                   <div className="relative z-10">
                     <p className="text-white font-black text-sm mb-2">Zero-Damage Assurance</p>
                     <p className="text-slate-400 text-[11px] leading-relaxed mb-6">Join 1000+ manufacturing leaders who trust Europack for global transit security.</p>
-                    <Link href="/contact" className="w-full py-3 bg-[#FF6600] text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl flex items-center justify-center gap-2 hover:bg-[#e65c00] transition-colors">
+                    <Link href="/contact" className="w-fit px-8 py-3 bg-[#FF6600] text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl flex items-center justify-center gap-2 hover:bg-[#e65c00] transition-colors">
                       Get a Quote <ArrowRight size={12} />
                     </Link>
                   </div>

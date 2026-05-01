@@ -23,7 +23,6 @@ const nextConfig: NextConfig = {
   },
   devIndicators: {
     appIsrStatus: false,
-    buildActivity: false,
   },
   async redirects() {
     return [
@@ -36,4 +35,7 @@ const nextConfig: NextConfig = {
   },
 };
 
+
 export default nextConfig;
+
+

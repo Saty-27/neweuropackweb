@@ -83,15 +83,11 @@ export default function Footer() {
 
   const ColumnHeader = ({ title, id }: { title: string, id: string }) => (
     <div 
-      className="flex items-center justify-between mb-8 cursor-pointer md:cursor-default"
-      onClick={() => toggleAccordion(id)}
+      className="flex items-center justify-between mb-6 md:mb-8"
     >
-      <h4 className="text-white font-black text-xs uppercase tracking-[0.2em] border-l-4 border-[#FF6600] pl-4">
+      <h4 className="text-white font-black text-[11px] sm:text-xs uppercase tracking-[0.2em] border-l-4 border-[#FF6600] pl-4">
         {title}
       </h4>
-      <div className="md:hidden text-slate-500">
-        {openAccordions[id] ? <Minus size={16} /> : <Plus size={16} />}
-      </div>
     </div>
   );
 
@@ -154,7 +150,7 @@ export default function Footer() {
           {/* Col 2: Quick Links (Useful) */}
           <div>
             <ColumnHeader title="Quick Links" id="quick-links" />
-            <ul className={`space-y-5 md:block ${openAccordions['quick-links'] ? 'block' : 'hidden'}`}>
+            <ul className="space-y-5">
               {[
                 { name: 'Home', link: '/' },
                 { name: 'About Us', link: '/about' },
@@ -196,7 +192,7 @@ export default function Footer() {
           {/* Col 3: Solutions (Expand) */}
           <div className="lg:col-span-1">
             <ColumnHeader title="Our Solutions" id="products" />
-            <div className={`space-y-10 md:block ${openAccordions['products'] ? 'block' : 'hidden'}`}>
+            <div className="space-y-10">
               <div className="space-y-5">
                 <p className="text-[12px] font-black text-white px-3 py-1 bg-white/5 rounded-md inline-block uppercase tracking-widest">Packaging Solutions</p>
                 <ul className="space-y-3 pl-2">
@@ -230,7 +226,7 @@ export default function Footer() {
           {/* Col 4: Capabilities (Strong) */}
           <div>
             <ColumnHeader title="Capabilities" id="capabilities" />
-            <div className={`space-y-12 md:block ${openAccordions['capabilities'] ? 'block' : 'hidden'}`}>
+            <div className="space-y-12">
                <div className="space-y-6">
                  <p className="text-[12px] font-black text-slate-500 uppercase tracking-widest border-b border-white/5 pb-2">Core Services</p>
                  <div className="flex flex-wrap gap-3">
@@ -260,7 +256,7 @@ export default function Footer() {
           {/* Col 5: Head Office (Full Details) */}
           <div>
             <ColumnHeader title="Head Office" id="head-office" />
-            <div className={`space-y-8 md:block ${openAccordions['head-office'] ? 'block' : 'hidden'}`}>
+            <div className="space-y-8">
                <div className="flex gap-5">
                  <div className="w-12 h-12 rounded-2xl bg-[#FF6600]/10 flex items-center justify-center text-[#FF6600] shrink-0">
                     <MapPin size={22} strokeWidth={2.5} />
@@ -296,7 +292,7 @@ export default function Footer() {
           {/* Col 8: Get Started (Strong CTA) */}
           <div>
             <ColumnHeader title="Get Started" id="trust-cta" />
-            <div className={`space-y-6 md:block ${openAccordions['trust-cta'] ? 'block' : 'hidden'}`}>
+            <div className="space-y-6">
                <div className="bg-gradient-to-br from-white/10 to-[#FF6600]/5 p-8 rounded-[40px] border border-white/10 relative overflow-hidden group">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF6600]/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-1000 blur-2xl" />
                   <div className="relative z-10 space-y-6">
@@ -306,7 +302,7 @@ export default function Footer() {
                     </div>
                     <button 
                       onClick={openEnquiryModal}
-                      className="w-full py-5 bg-[#FF6600] text-white text-[11px] font-black uppercase tracking-[0.25em] rounded-2xl flex items-center justify-center gap-3 hover:bg-[#e65c00] transition-all shadow-xl shadow-orange-500/20 active:scale-95 group"
+                      className="w-fit px-8 py-4 bg-[#FF6600] text-white text-[11px] font-black uppercase tracking-[0.25em] rounded-2xl flex items-center justify-center gap-3 hover:bg-[#e65c00] transition-all shadow-xl shadow-orange-500/20 active:scale-95 group mx-auto sm:mx-0"
                     >
                       Quick Quote <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
                     </button>
@@ -342,7 +338,7 @@ export default function Footer() {
 
           <button 
             onClick={openEnquiryModal}
-            className="relative z-10 w-full lg:w-auto bg-[#FF6600] text-white px-12 py-7 rounded-[24px] font-black uppercase tracking-[0.25em] text-sm hover:bg-[#e65c00] transition-all flex items-center justify-center gap-4 shadow-[0_20px_50px_rgba(255,102,0,0.3)] hover:-translate-y-2 active:scale-95 group"
+            className="relative z-10 w-fit mx-auto lg:mx-0 bg-[#FF6600] text-white px-8 sm:px-12 py-5 sm:py-7 rounded-[20px] sm:rounded-[24px] font-black uppercase tracking-[0.25em] text-xs sm:text-sm hover:bg-[#e65c00] transition-all flex items-center justify-center gap-4 shadow-[0_20px_50px_rgba(255,102,0,0.3)] hover:-translate-y-2 active:scale-95 group"
           >
             GET YOUR FREE QUOTE
             <ArrowRight size={22} className="group-hover:translate-x-3 transition-transform" />

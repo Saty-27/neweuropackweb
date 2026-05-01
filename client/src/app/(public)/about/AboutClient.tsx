@@ -122,30 +122,9 @@ export default function AboutClient() {
                   <span className="text-[#FF6600]">Europack.</span>
                 </h2>
                 <p className="text-slate-600 text-lg md:text-xl leading-relaxed font-medium">
-                  We are a manufacturing-driven packaging solutions company with over <span className="text-[#1A1F2C] font-black">2500 employees</span> spanning across <span className="text-[#FF6600] font-black">multiple locations within India</span> covering over <span className="text-[#1A1F2C] font-black">2.3 lakh sq. mt.</span> of work space.
+                  We are a manufacturing-driven packaging solutions company with over <span className="text-[#1A1F2C] font-black">2500 employees</span> spanning across <span className="text-[#FF6600] font-black">multiple locations within India</span> covering over <span className="text-[#1A1F2C] font-black">2.3 lakh sq. mt.</span> of work space. We also have a global presence with manufacturing units and warehouses in <span className="text-[#FF6600] font-black">Germany 🇩🇪</span>, <span className="text-[#FF6600] font-black">Ireland 🇮🇪</span> and <span className="text-[#FF6600] font-black">UAE 🇦🇪</span>.
                 </p>
-                
-                {/* HIGHLIGHTED GLOBAL PRESENCE - CLEAN VERSION */}
-                <div className="space-y-4 pt-4">
-                  <p className="text-[#1A1F2C] font-black uppercase tracking-widest text-[10px] tracking-[0.2em] flex items-center gap-2">
-                    <MapPin size={14} className="text-[#FF6600]" /> ACROSS PAN INDIA:
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    {[
-                      { name: 'Germany', flag: '🇩🇪', desc: 'Central Europe Hub' },
-                      { name: 'Ireland', flag: '🇮🇪', desc: 'EU Operations' },
-                      { name: 'UAE', flag: '🇦🇪', desc: 'Middle East Logistics' }
-                    ].map((country) => (
-                      <div key={country.name} className="group p-5 bg-slate-50 border border-slate-100 rounded-[24px] flex items-center gap-4 hover:bg-white hover:shadow-2xl hover:border-[#FF6600]/30 transition-all duration-300">
-                        <div className="text-3xl filter group-hover:scale-110 transition-transform">{country.flag}</div>
-                        <div>
-                          <div className="text-[11px] font-black text-[#1A1F2C] uppercase tracking-widest">{country.name}</div>
-                          <div className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">{country.desc}</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+
               </div>
 
               <div className="space-y-8 border-t border-slate-100 pt-10">
@@ -416,7 +395,7 @@ export default function AboutClient() {
       {/* SECTION 6: STATS */}
       <section ref={statsRef} className="py-24 bg-white border-b border-slate-100">
         <div className="container max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap justify-between lg:justify-center items-center gap-12 md:gap-24 lg:gap-32">
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 lg:gap-32">
             {[
               { label: 'Export Destinations', value: 80, suffix: '+' },
               { label: 'Happy Customers', value: 1000, suffix: '+' },

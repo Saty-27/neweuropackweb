@@ -166,7 +166,7 @@ export default function CareersClient() {
     <div className="bg-[#F8FAFC]">
       
       {/* 1. HERO SECTION */}
-      <section className="relative h-screen min-h-[700px] flex items-center overflow-hidden bg-[#1A1F2C]">
+      <section className="relative min-h-[600px] md:h-screen md:min-h-[700px] flex items-center overflow-hidden bg-[#1A1F2C] pt-24 md:pt-0">
         <div className="absolute inset-0 z-0">
           <Image 
             src="/images/banners/careers.png" 
@@ -187,7 +187,7 @@ export default function CareersClient() {
             className="max-w-4xl space-y-8"
           >
 
-            <h1 className="text-7xl md:text-9xl font-black text-white tracking-tighter leading-[0.85] mb-8">
+            <h1 className="text-5xl sm:text-7xl md:text-9xl font-black text-white tracking-tighter leading-[0.9] md:leading-[0.85] mb-8">
               Build a Career <br /> at <span className="text-[#FF6600]">Europack.</span>
             </h1>
             <p className="text-slate-300 text-xl font-medium leading-relaxed max-w-2xl">
@@ -222,7 +222,7 @@ export default function CareersClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="group p-10 rounded-[48px] bg-slate-50 border border-slate-100 hover:border-[#FF6600]/20 hover:shadow-2xl hover:shadow-orange-500/5 transition-all"
+                className="group p-10 rounded-[48px] bg-slate-50 border border-slate-100 hover:border-[#FF6600]/20 hover:shadow-2xl hover:shadow-orange-500/5 transition-all text-center md:text-left"
               >
                 <div className="text-5xl font-black text-[#1A1F2C] tracking-tighter mb-2">
                   <span className="text-[#FF6600]">{stat.value}</span>{stat.suffix}
@@ -508,10 +508,10 @@ export default function CareersClient() {
             <div className="lg:w-1/2 relative">
                <div className="aspect-square rounded-[60px] overflow-hidden relative">
                   <Image 
-                    src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2069&auto=format&fit=crop" 
+                    src="/images/about/factory.png" 
                     alt="Industrial Partnership" 
                     fill
-                    className="object-cover opacity-80"
+                    className="object-cover opacity-90"
                   />
                   <div className="absolute inset-0 bg-gradient-to-tr from-[#1A1F2C] via-transparent to-transparent" />
                </div>
@@ -686,48 +686,6 @@ export default function CareersClient() {
         </div>
       </section>
 
-      {/* 12. FINAL CTA SECTION */}
-      <section className="py-24 bg-slate-50">
-        <div className="container max-w-[90rem] mx-auto px-6">
-           <div className="bg-[#1A1F2C] rounded-[80px] p-12 lg:p-24 text-center space-y-12 relative overflow-hidden">
-             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#FF6600_1px,transparent_1px)] [background-size:40px_40px]" />
-             
-             <div className="relative z-10 space-y-6">
-                <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter leading-none">
-                  Don't See the <br /> <span className="text-[#FF6600]">Right Role?</span>
-                </h2>
-                <p className="text-slate-400 text-lg md:text-xl font-medium max-w-2xl mx-auto">
-                  Send your CV — we hire for potential, not just positions. Our talent pool is always active for future industrial breakthroughs.
-                </p>
-             </div>
-
-             <div className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-6">
-                <button 
-                  onClick={() => {
-                    setSelectedJob(undefined);
-                    setIsApplyModalOpen(true);
-                  }}
-                  className="w-full md:w-fit flex items-center justify-center gap-4 px-12 py-6 bg-[#FF6600] text-white rounded-2xl text-sm font-black uppercase tracking-widest hover:bg-[#E65C00] transition-all shadow-2xl shadow-orange-500/20"
-                >
-                   <Download size={20} /> Upload Resume (PDF)
-                </button>
-                <button 
-                  onClick={() => {
-                    setSelectedJob(undefined);
-                    setIsApplyModalOpen(true);
-                  }}
-                  className="w-full md:w-fit flex items-center justify-center gap-4 px-12 py-6 bg-white/5 border border-white/10 text-white rounded-2xl text-sm font-black uppercase tracking-widest hover:bg-white/10 transition-all"
-                >
-                   <Phone size={20} /> WhatsApp Quick Apply
-                </button>
-             </div>
-             
-             <div className="relative z-10 pt-12">
-                <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.4em]">Join the Ecosystem Matrix</p>
-             </div>
-           </div>
-        </div>
-      </section>
 
       {/* MODALS */}
       <JobApplyModal 

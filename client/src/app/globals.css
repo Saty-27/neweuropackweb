@@ -81,22 +81,38 @@ body {
   animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-@keyframes pulse-soft {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(0.98); }
-}
-
 .animate-pulse-soft {
   animation: pulse-soft 3s ease-in-out infinite;
 }
 
-/* Force Hide Next.js Development Toolbar/Portals */
-nextjs-portal,
-#nextjs-portal,
-#__next-build-watcher,
-[data-nextjs-toast],
-[data-nextjs-dialog-overlay],
-.nextjs-static-indicator-container {
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.pause-marquee:hover, .pause-marquee:active {
+  animation-play-state: paused;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+  .nextjs-static-indicator-container,
+  #nextjs-dev-overlay,
+  [data-nextjs-dev-overlay],
+  #nextjs-portal,
+  .nextjs-portal {
   display: none !important;
   opacity: 0 !important;
   visibility: hidden !important;

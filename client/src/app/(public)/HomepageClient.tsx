@@ -64,47 +64,14 @@ function Hero({ onOpenModal }: { onOpenModal: () => void }) {
 
           {/* Subheading */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-[#FF6600] text-xl md:text-2xl font-black uppercase tracking-[0.1em] mb-6"
-          >
-            Complete One-Stop End To End Packaging Solutions
-          </motion.p>
-
-          {/* Paragraph Copy */}
-          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="text-slate-300 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed font-medium"
+            className="text-slate-300 text-lg md:text-xl max-w-3xl mb-14 leading-relaxed font-medium"
           >
-            We are a manufacturing-driven packaging solutions company with over 2500 employees spanning across multiple locations within India covering over 2.3 lakh sq. mt. of work space.
+            We are a manufacturing-driven packaging solutions company with over <span className="text-white font-black">2500 employees</span> spanning across <span className="text-[#FF6600] font-black">multiple locations within India</span> covering over <span className="text-white font-black">2.3 lakh sq. mt.</span> of work space. We also have a global presence with manufacturing units and warehouses in <span className="text-[#FF6600] font-black">Germany 🇩🇪</span>, <span className="text-[#FF6600] font-black">Ireland 🇮🇪</span> and <span className="text-[#FF6600] font-black">UAE 🇦🇪</span>.
           </motion.p>
 
-          {/* GLOBAL PRESENCE HIGHLIGHT - CLEAN VERSION */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="flex flex-wrap items-center gap-8 mb-14"
-          >
-            <div className="space-y-1">
-              <p className="text-[10px] font-black text-[#FF6600] uppercase tracking-[0.3em] mb-3">Across Pan India</p>
-              <div className="flex flex-wrap items-center gap-6">
-                {[
-                  { name: 'Germany', flag: '🇩🇪' },
-                  { name: 'Ireland', flag: '🇮🇪' },
-                  { name: 'UAE', flag: '🇦🇪' }
-                ].map((country) => (
-                  <div key={country.name} className="flex items-center gap-3 px-5 py-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl group hover:bg-[#FF6600]/10 transition-all">
-                    <span className="text-xl">{country.flag}</span>
-                    <span className="text-white font-black text-sm uppercase tracking-widest">{country.name}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </motion.div>
 
           {/* Service Line - Glassmorphism Card */}
           <motion.div
@@ -114,7 +81,7 @@ function Hero({ onOpenModal }: { onOpenModal: () => void }) {
             className="mb-14 px-8 py-5 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl inline-block"
           >
             <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest leading-loose">
-              WOOD, PLASTIC, PAPER, METAL - PALLETS &ensp;|&ensp; BOXES &ensp;|&ensp; SKIDS &ensp;|&ensp; CASES &ensp;|&ensp; STRAPS &ensp;|&ensp; TAPES &ensp;|&ensp; BUCKLES &ensp;|&ensp; THERMAL COVERS &ensp;|&ensp; STRETCH FILM AND MORE
+              WOOD, PLASTIC, PAPER, METAL - PALLETS | BOXES | SKIDS | CASES | STRAPS | TAPES | BUCKLES | THERMAL COVERS | STRETCH FILM AND MORE
             </p>
           </motion.div>
 
@@ -184,7 +151,16 @@ function PartnerBar() {
           ))}
         </div>
       </div>
-      <style>{`@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-33.33%)}}`}</style>
+      <style>{`
+        @keyframes antigravity-float {
+          0% { transform: translateY(0px) rotate(var(--r, 5deg)); }
+          50% { transform: translateY(-15px) rotate(calc(var(--r, 5deg) + 3deg)); }
+          100% { transform: translateY(0px) rotate(var(--r, 5deg)); }
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-33.33%); } }
+      `}</style>
     </section>
   );
 }
@@ -350,6 +326,8 @@ function Intro() {
           50% { transform: translateY(-15px) rotate(calc(var(--r, 5deg) + 3deg)); }
           100% { transform: translateY(0px) rotate(var(--r, 5deg)); }
         }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
     </section>
   );
@@ -358,30 +336,55 @@ function Intro() {
 // ── FEATURED PRODUCTS ─────────────────────────────────────────────────────────
 function FeaturedProducts() {
   const { openEnquiryModal } = useModal();
-  const [products, setProducts] = useState<any[]>([]);
-
-  useEffect(() => {
-    import('../../lib/api').then(({ fetchAPI }) => {
-      fetchAPI('/products')
-        .then((res) => {
-          if (res.success) {
-            const visibleProducts = res.data
-              .filter((p: any) => p.active)
-              .sort((a: any, b: any) => {
-                if (a.isFeatured !== b.isFeatured) return b.isFeatured ? 1 : -1;
-                return (a.order || 0) - (b.order || 0);
-              })
-              .slice(0, 6);
-            setProducts(visibleProducts);
-          }
-        })
-        .catch(() => { });
-    });
-  }, []);
+  
+  const featuredProducts = [
+    {
+      title: "Wooden Pallets",
+      description: "ISPM-15 certified pallets built to handle heavy-duty export loads with reliability.",
+      image: "/images/products/four-way-pallets.webp",
+      features: ["Heat-treated pine wood", "Export compliant (ISPM-15)", "High load capacity", "Custom sizes available"],
+      slug: "wooden-pallets/four-way-pallet"
+    },
+    {
+      title: "Corrugated Boxes",
+      description: "3-ply to 9-ply custom-printed corrugated boxes for any weight requirement.",
+      image: "/images/products/corrugatedBoxes.png",
+      features: ["7-ply extreme strength", "Moisture resistant coating", "Custom brand printing", "Stackable rigidity"],
+      slug: "corrugated-cartons/9ply-heavy-duty"
+    },
+    {
+      title: "Dunnage Bags",
+      description: "AAR-certified inflatable void fill bags for zero cargo shift in transit.",
+      image: "/images/products/user_dunnage_bag.webp",
+      features: ["AAR certified materials", "Zero cargo shifting", "Reusable heavy-duty valve", "High burst pressure"],
+      slug: "dunnage-bag/air-dunnage-bags"
+    },
+    {
+      title: "Seaworthy Packing",
+      description: "Multi-layered moisture barrier packing for long sea voyages.",
+      image: "/images/products/user_seaworthy_laminates.jpg",
+      features: ["VCI foil wrapping", "Desiccant insertion", "Rust & corrosion proof", "Vacuum internal seal"],
+      slug: "special-services/seaworthy-packing"
+    },
+    {
+      title: "Lashing Materials",
+      description: "Industrial grade heavy lashing straps and securing mechanisms.",
+      image: "/images/products/user_lashing_materials.jpg",
+      features: ["5 Ton load capacity", "Weather resistant poly", "Heavy duty ratchets", "Container compliant"],
+      slug: "lashing-materials/ratchet-belt"
+    },
+    {
+      title: "Vacuum Packing",
+      description: "Complete vacuum sealing for sensitive electronics and machinery.",
+      image: "/images/products/user_vacuum_packing.png",
+      features: ["100% moisture removal", "Dust and dirt proof", "Extends shelf life", "Anti-static options"],
+      slug: "vacuum-packaging/multilayer-laminated-vci"
+    }
+  ];
 
   return (
     <section className="py-24 relative overflow-hidden" style={{
-      background: `linear-gradient(rgba(255,255,255,0.96), rgba(255,255,255,0.96)), url('/images/warehouse-blur.jpg')`,
+      background: `linear-gradient(rgba(241, 245, 249, 0.94), rgba(241, 245, 249, 0.94)), url('/images/warehouse-blur.jpg')`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
     }}>
@@ -391,8 +394,8 @@ function FeaturedProducts() {
           <h2 className="text-4xl md:text-5xl font-black text-[#1A1F2C] tracking-tight">Our Packaging <span className="text-[#FF6600]">Products.</span></h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map(p => (
-            <div key={p.title} className="bg-white rounded-[20px] overflow-hidden transition-all duration-300 hover:-translate-y-[10px] hover:cursor-pointer" style={{ boxShadow: '0 10px 25px rgba(0,0,0,0.06)' }} onMouseEnter={(e) => e.currentTarget.style.boxShadow = '0 25px 50px rgba(0,0,0,0.12)'} onMouseLeave={(e) => e.currentTarget.style.boxShadow = '0 10px 25px rgba(0,0,0,0.06)'}>
+          {featuredProducts.map(p => (
+            <Link href={`/products/${p.slug}`} key={p.title} className="bg-white rounded-[24px] overflow-hidden border border-slate-200/50 transition-all duration-500 hover:-translate-y-3 hover:cursor-pointer group block no-underline" style={{ boxShadow: '0 12px 30px rgba(0,0,0,0.04), 0 4px 10px rgba(0,0,0,0.02)' }} onMouseEnter={(e) => e.currentTarget.style.boxShadow = '0 30px 60px rgba(0,0,0,0.12), 0 10px 20px rgba(0,0,0,0.05)'} onMouseLeave={(e) => e.currentTarget.style.boxShadow = '0 12px 30px rgba(0,0,0,0.04), 0 4px 10px rgba(0,0,0,0.02)'}>
               <div className="h-[220px] w-full overflow-hidden relative bg-slate-50 p-4">
                 <Image 
                   src={p.image} 
@@ -405,17 +408,8 @@ function FeaturedProducts() {
               <div className="p-6">
                 <h3 className="font-bold text-[#1A1F2C] text-xl mb-2">{p.title}</h3>
                 <p className="text-sm text-slate-600 mb-4 h-[40px] leading-relaxed">{p.description}</p>
-                <div className="flex flex-col gap-1.5 mb-2">
-                  {p.features && p.features.map((feat: string, i: number) => (
-                    feat ? (
-                      <div key={i} className="flex items-center gap-[8px] text-[14px] text-slate-700 mb-[6px]">
-                        <span className="text-[#ff6a00] font-black text-sm">✔</span> {feat}
-                      </div>
-                    ) : null
-                  ))}
-                </div>
                 <div className="flex justify-between items-center mt-[15px] pt-4 border-t border-slate-50">
-                  <Link href={p.viewLink || p.slug ? `/products/${p.slug}` : '#'} className="px-5 py-2.5 text-[13px] font-bold border border-[#ddd] text-slate-600 rounded-lg hover:bg-slate-50 transition-colors uppercase tracking-wide">View Details</Link>
+                  <div className="px-5 py-2.5 text-[13px] font-bold border border-[#ddd] text-slate-600 rounded-lg group-hover:bg-[#FF6600] group-hover:text-white group-hover:border-[#FF6600] transition-all uppercase tracking-wide">View Details</div>
                   <button 
                     onClick={openEnquiryModal}
                     className="px-5 py-2.5 text-[13px] font-bold bg-[#ff6a00] text-white rounded-lg hover:bg-[#e65c00] transition-colors shadow-md shadow-orange-200 uppercase tracking-wide"
@@ -424,14 +418,8 @@ function FeaturedProducts() {
                   </button>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
-        </div>
-        
-        <div className="text-center mt-16">
-          <Link href="/products" className="inline-flex items-center gap-4 bg-[#1A1F2C] text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-[#FF6600] transition-all shadow-2xl hover:-translate-y-1 active:scale-95">
-            Explore Full Catalog <ArrowRight size={20} />
-          </Link>
         </div>
       </div>
     </section>
@@ -492,12 +480,15 @@ function Services() {
       </div>
 
       {/* Carousel Container */}
-      <div className="relative w-full overflow-hidden">
-        <motion.div
-          className="flex gap-8 px-4 sm:px-[10%] cursor-grab active:cursor-grabbing pb-12 pt-10"
+      <div className="relative w-full overflow-x-auto lg:overflow-hidden no-scrollbar touch-pan-y">
+                <motion.div
+          drag="x"
+          dragConstraints={{ left: -3000, right: 0 }}
+          dragElastic={0.1}
+          className="flex gap-5 sm:gap-8 px-4 sm:px-[10%] cursor-grab active:cursor-grabbing pb-12 pt-10" 
           animate={{ x: ["0%", "-50%"] }}
           transition={{
-            duration: 30,
+            duration: 20,
             repeat: Infinity,
             ease: "linear",
             repeatType: "loop"
@@ -632,9 +623,12 @@ function Industries() {
       </div>
 
       {/* Carousel Container */}
-      <div className="relative w-full overflow-hidden">
-        <motion.div
-          className="flex gap-8 px-4 sm:px-[10%] cursor-grab active:cursor-grabbing pb-12 pt-10"
+      <div className="relative w-full overflow-x-auto lg:overflow-hidden no-scrollbar touch-pan-y">
+                <motion.div
+          drag="x"
+          dragConstraints={{ left: -3000, right: 0 }}
+          dragElastic={0.1}
+          className="flex gap-5 sm:gap-8 px-4 sm:px-[10%] cursor-grab active:cursor-grabbing pb-12 pt-10" 
           animate={{ x: ["0%", "-50%"] }}
           transition={{
             duration: 35,

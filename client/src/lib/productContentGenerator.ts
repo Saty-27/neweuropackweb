@@ -390,7 +390,7 @@ When sourcing ${productName.toLowerCase()} for your industrial or export operati
 
 2. Certified Manufacturing: As a ${meta.certifications[0]} certified manufacturer, we provide all required compliance documentation with every shipment — eliminating paperwork delays at customs checkpoints.
 
-3. Production Reliability: With over 2,500 employees spanning across multiple locations within India and covering over 2.3 lakh sq. mt. of work space, we maintain consistent on-time delivery performance even for large-volume orders with aggressive timelines.
+3. Production Reliability: With over 2,500 employees spanning across multiple locations within India and covering over 2.3 lakh sq. mt. of work space, we maintain consistent on-time delivery performance globally with manufacturing units and warehouses in Germany, Ireland and UAE.
 
 ${meta.keywords.join(' | ')} — Keywords That Reflect Our Expertise
 

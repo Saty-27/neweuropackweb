@@ -2,7 +2,6 @@
 
 import Header from '../../components/shared/Header';
 import Footer from '../../components/shared/Footer';
-import SiteAssistant from '../../components/layout/SiteAssistant';
 import FloatingContact from '../../components/common/FloatingContact';
 import { useState, useEffect } from 'react';
 import { fetchAPI } from '../../lib/api';
@@ -46,7 +45,6 @@ function LayoutContent({ children }: { children: React.ReactNode }) {
         {children}
       </main>
       <Footer />
-      <SiteAssistant />
       <FloatingContact />
       <InquiryModal isOpen={isEnquiryModalOpen} onClose={closeEnquiryModal} />
     </>
