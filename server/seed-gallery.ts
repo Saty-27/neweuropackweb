@@ -30,7 +30,7 @@ async function seedGallery() {
     await Gallery.deleteMany({});
 
     // Path to your gallery images
-    const galleryDir = '/var/www/neweuropackweb/client/public/images/Gallery';
+    const galleryDir = path.join(__dirname, '../client/public/images/Gallery');
     const files = fs.readdirSync(galleryDir);
 
     const galleryItems = files.map((file, index) => {

@@ -421,6 +421,11 @@ function FeaturedProducts() {
             </Link>
           ))}
         </div>
+        <div className="text-center mt-12">
+          <Link href="/products" className="inline-flex items-center gap-2 border-2 border-[#FF6600] text-[#FF6600] px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-[#FF6600] hover:text-white transition-all">
+            View All Products <ArrowRight size={14} />
+          </Link>
+        </div>
       </div>
     </section>
   );
