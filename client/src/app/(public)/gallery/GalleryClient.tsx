@@ -48,15 +48,17 @@ export default function GalleryClient({ items, settings }: GalleryClientProps) {
   const getImageUrl = (path: string) => {
     if (!path) return '';
     if (path.startsWith('http')) return path;
-    // Handle local frontend public assets
-    let fullPath = '';
-    if (path.startsWith('/images') || path.startsWith('images')) {
-      fullPath = path.startsWith('/') ? path : `/${path}`;
-    } else {
-      // Handle backend uploads
-      fullPath = `https://europackindia.com/${path}`;
+    
+    // Ensure path starts with /
+    const cleanPath = path.startsWith('/') ? path : `/${path}`;
+    
+    // If it's in the images folder (case-insensitive check), it's a client-side public asset
+    if (cleanPath.toLowerCase().startsWith('/images/')) {
+      return encodeURI(cleanPath);
     }
-    return encodeURI(fullPath);
+    
+    // Handle backend uploads (assuming they are served from the same domain or configured via Next.js)
+    return encodeURI(cleanPath);
   };
 
   const openLightbox = (item: any, index: number) => {

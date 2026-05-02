@@ -807,16 +807,16 @@ function BlogTeasers() {
 // ── GALLERY PREVIEW ───────────────────────────────────────────────────────────
 function GalleryPreview() {
   const imgs = [
-    '/images/gallery/ExportPacking.webp',
-    '/images/gallery/heavymachinepacking.webp',
-    '/images/gallery/woodenskids.webp',
-    '/images/gallery/heavyengineeringpacking.webp',
-    '/images/gallery/shrinkpacking.webp',
-    '/images/gallery/naillessboxes.webp',
-    '/images/gallery/plywoodBoxes.webp',
-    '/images/gallery/hugemachinepacking.webp',
-    '/images/gallery/Boxes.webp',
-    '/images/gallery/Packing.webp'
+    '/images/Gallery/ExportPacking.webp',
+    '/images/Gallery/heavymachinepacking.webp',
+    '/images/Gallery/woodenskids.webp',
+    '/images/Gallery/heavyengineeringpacking.webp',
+    '/images/Gallery/shrinkpacking.webp',
+    '/images/Gallery/naillessboxes.webp',
+    '/images/Gallery/plywoodBoxes.webp',
+    '/images/Gallery/hugemachinepacking.webp',
+    '/images/Gallery/Boxes.webp',
+    '/images/Gallery/Packing.webp'
   ];
   return (
     <section className="py-24 bg-slate-50">
