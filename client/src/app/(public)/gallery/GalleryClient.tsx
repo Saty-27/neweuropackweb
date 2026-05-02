@@ -151,7 +151,7 @@ export default function GalleryClient({ items, settings }: GalleryClientProps) {
                      <button
                        key={cat}
                        onClick={() => setActiveFilter(cat)}
-                       className={`px-8 py-4 rounded-[24px] text-[11px] font-black uppercase tracking-widest transition-all duration-500 hover:shadow-xl active:scale-95 border ${activeFilter === cat ? 'bg-[#FF6600] text-white border-[#FF6600] shadow-2xl shadow-orange-500/30 scale-105' : 'bg-slate-50 text-slate-400 border-slate-100 hover:text-slate-900 hover:bg-slate-100'}`}
+                       className={`px-5 py-3 md:px-8 md:py-4 rounded-[24px] text-[11px] font-black uppercase tracking-widest transition-all duration-500 hover:shadow-xl active:scale-95 border ${activeFilter === cat ? 'bg-[#FF6600] text-white border-[#FF6600] shadow-2xl shadow-orange-500/30 scale-105' : 'bg-slate-50 text-slate-400 border-slate-100 hover:text-slate-900 hover:bg-slate-100'}`}
                      >
                         {cat}
                      </button>
@@ -235,15 +235,16 @@ export default function GalleryClient({ items, settings }: GalleryClientProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[1000] flex items-center justify-center p-4 md:p-12 bg-[#0B0F19]/98 backdrop-blur-2xl"
+            className="fixed inset-0 z-[1000] overflow-y-auto bg-[#0B0F19]/98 backdrop-blur-2xl"
           >
+            <div className="min-h-full flex items-center justify-center p-4 md:p-12 relative">
              {/* Controls Overlay */}
              <div className="absolute inset-0 z-10 pointer-events-none">
                 <button 
                   onClick={closeLightbox}
-                  className="absolute top-12 right-12 w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-red-500 transition-all pointer-events-auto shadow-2xl"
+                  className="absolute top-6 right-6 md:top-12 md:right-12 w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-red-500 transition-all pointer-events-auto shadow-2xl"
                 >
-                  <X size={32} />
+                  <X size={24} className="md:w-8 md:h-8" />
                 </button>
                 <button 
                   onClick={(e) => { e.stopPropagation(); prevItem(); }}
@@ -263,11 +264,11 @@ export default function GalleryClient({ items, settings }: GalleryClientProps) {
                initial={{ scale: 0.9, opacity: 0 }}
                animate={{ scale: 1, opacity: 1 }}
                exit={{ scale: 0.9, opacity: 0 }}
-               className="w-full max-w-7xl flex flex-col lg:flex-row gap-16 items-center"
+               className="w-full max-w-7xl flex flex-col lg:flex-row gap-8 lg:gap-16 items-center"
                onClick={e => e.stopPropagation()}
              >
                 {/* Media Container */}
-                <div className="flex-1 w-full aspect-video lg:h-[75vh] lg:aspect-auto rounded-[64px] overflow-hidden bg-black shadow-2xl border border-white/10 relative group">
+                <div className="flex-1 w-full aspect-video lg:min-h-[60vh] lg:h-auto rounded-[32px] md:rounded-[64px] overflow-hidden bg-black shadow-2xl border border-white/10 relative group">
                    {selectedItem.type === 'video' ? (
                      selectedItem.videoUrl ? (
                        <video 
@@ -290,14 +291,14 @@ export default function GalleryClient({ items, settings }: GalleryClientProps) {
                 </div>
 
                 {/* Narrative Sidebar */}
-                <div className="w-full lg:w-[450px] text-left space-y-12">
-                   <div className="space-y-8">
+                <div className="w-full lg:w-[450px] text-left space-y-6 lg:space-y-12">
+                   <div className="space-y-4 lg:space-y-8">
                       <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-2xl bg-[#FF6600]/10 border border-[#FF6600]/20 text-[#FF6600] text-[11px] font-black uppercase tracking-[0.2em]">
                          {selectedItem.type === 'video' ? <VideoIcon size={18} /> : <ImageIcon size={18} />}
                          {selectedItem.category} Excellence
                       </div>
-                      <h2 className="text-5xl md:text-6xl font-black text-white leading-[0.9] tracking-tighter uppercase">{selectedItem.title}</h2>
-                      <p className="text-slate-400 text-lg font-medium leading-relaxed opacity-80 italic">
+                      <h2 className="text-4xl md:text-6xl font-black text-white leading-[0.9] tracking-tighter uppercase">{selectedItem.title}</h2>
+                      <p className="text-slate-400 text-base md:text-lg font-medium leading-relaxed opacity-80 italic">
                          "{selectedItem.description}"
                       </p>
                    </div>
@@ -337,6 +338,7 @@ export default function GalleryClient({ items, settings }: GalleryClientProps) {
                    </div>
                 </div>
              </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
