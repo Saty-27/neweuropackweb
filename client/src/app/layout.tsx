@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export async function generateMetadata(): Promise<Metadata> {
-  let googleVerification = 'AJB51Zt0wma1_RXMUgLWHDFnFQadoZ9mYC58FAs0obo';
+  let googleVerification = 'F5nSikuoKput_ywJswJk3Mz6kOyEVGZxD6KrQCNmMP8';
   let yahooVerification = '';
   let bingVerification = '';
 
@@ -76,6 +76,7 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="google-site-verification" content="F5nSikuoKput_ywJswJk3Mz6kOyEVGZxD6KrQCNmMP8" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
         {googleAnalyticsId && (
           <>
