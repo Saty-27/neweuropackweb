@@ -142,7 +142,7 @@ export const palletBlogs = {
       p(`For extremely heavy loads (industrial machinery, steel components, etc.), we often recommend a hybrid approach: custom-engineered 4-way pallets with reinforced blocks and thicker deck boards. These maintain the handling flexibility of 4-way design while providing the structural integrity needed for multi-ton loads.`),
 
       h3('Cost Analysis'),
-      p(`Two-way pallets are typically 15-20% cheaper than their 4-way counterparts of the same size and timber grade. This is because they use less material and are simpler to manufacture. For businesses with large pallet requirements (1,000+ units per month) operating in controlled warehouse environments, this cost difference can be substantial.`),
+      p(`Two-way pallets are typically 15-20% cheaper than their 4-way counterparts of the same size and timber grade. This is because they use less material and are simpler to manufacture. For businesses with large pallet requirements (3,000+ units per month) operating in controlled warehouse environments, this cost difference can be substantial.`),
       p(`However, the total cost of ownership often favors 4-way pallets when you factor in: reduced handling time (labor savings), fewer pallet jams and damage incidents, universal compatibility with any handling equipment, and higher resale value in the secondhand pallet market. For export operations, 4-way pallets are essentially mandatory and the cost premium is simply a cost of doing business.`),
 
       h2('Which Type Should You Choose?'),

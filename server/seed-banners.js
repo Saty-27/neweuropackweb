@@ -50,7 +50,7 @@ const seedBanners = async () => {
         tabletImage: '/images/banners/4.png',
         mobileImage: '/images/banners/4.png',
         imageAlt: 'Heavy Forklift Container Loading',
-        heading: 'Trusted by 1000+ Manufacturers',
+        heading: 'Trusted by 3000+ Manufacturers',
         subheading: 'Unmatched 99.8% Zero-Claim Global Export Track Record',
         buttons: [{ text: 'Read Case Studies', link: '/case-studies' }],
         order: 4,

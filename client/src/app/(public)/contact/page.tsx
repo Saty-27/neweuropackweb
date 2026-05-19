@@ -10,7 +10,7 @@ import TechFAQ from '@/components/shared/TechFAQ';
 import { motion } from 'framer-motion';
 
 const testimonials = [
-  { text: "Zero-damage record across 500+ international projects. Europack is our most reliable partner.", client: "Siemens India", role: "Logistics Head" },
+  { text: "Zero-damage record across 1000+ international projects. Europack is our most reliable partner.", client: "Siemens India", role: "Logistics Head" },
   { text: "Their technical documentation and compliance handling saves us tremendous time and port-fees.", client: "TATA Motors", role: "SCM Director" },
   { text: "The engineering detail they put into their vacuum packing ensures our CNC machines arrive in flawless condition.", client: "L&T Automation", role: "Procurement Lead" }
 ];

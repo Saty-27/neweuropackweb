@@ -109,7 +109,7 @@ export default function QuotesCRMPage() {
                       {quote.message}
                     </p>
                     {quote.fileUrl && (
-                      <a href={`http://localhost:5002/${quote.fileUrl}`} target="_blank" rel="noreferrer" style={{ fontSize: '0.8rem', color: '#3182CE' }}>📎 View Attached File</a>
+                      <a href={`/${quote.fileUrl}`} target="_blank" rel="noreferrer" style={{ fontSize: '0.8rem', color: '#3182CE' }}>📎 View Attached File</a>
                     )}
                   </td>
                   <td style={{ padding: '1rem' }}>

@@ -15,8 +15,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import InquiryModal from '../../components/layout/InquiryModal';
 import TechFAQ from '../../components/shared/TechFAQ';
+import ClientLogoSection from '../../components/shared/ClientLogoSection';
 import { useModal } from '../../context/ModalContext';
-import { partnersList } from '../../data/partners';
 
 function Hero({ onOpenModal }: { onOpenModal: () => void }) {
   return (
@@ -132,39 +132,6 @@ function Hero({ onOpenModal }: { onOpenModal: () => void }) {
 
 
 
-// ── PARTNER BAR ───────────────────────────────────────────────────────────────
-function PartnerBar() {
-  const logos = partnersList;
-  return (
-    <section className="py-16 bg-white border-y border-slate-100 overflow-hidden shadow-sm z-30 relative">
-      <div className="flex gap-24 overflow-hidden items-center">
-        <div className="flex gap-32 animate-[marquee_40s_linear_infinite] items-center whitespace-nowrap">
-          {[...logos, ...logos, ...logos].map((l, i) => (
-            <div key={i} className="relative h-14 md:h-20 w-32 md:w-48 shrink-0">
-              <Image 
-                src={l.src} 
-                alt={l.name} 
-                fill
-                className="object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100" 
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-      <style>{`
-        @keyframes antigravity-float {
-          0% { transform: translateY(0px) rotate(var(--r, 5deg)); }
-          50% { transform: translateY(-15px) rotate(calc(var(--r, 5deg) + 3deg)); }
-          100% { transform: translateY(0px) rotate(var(--r, 5deg)); }
-        }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-33.33%); } }
-      `}</style>
-    </section>
-  );
-}
-
 // ── INTRO / WELCOME SECTION ───────────────────────────────────────────────────
 function Intro() {
   const { ref, inView } = useInView({ triggerOnce: true });
@@ -258,7 +225,7 @@ function Intro() {
               <div key={idx} className="flex items-center gap-5 bg-white p-5 rounded-[20px] shadow-[0_10px_30px_rgba(0,0,0,0.06)] border border-slate-50 w-full hover:shadow-[0_15px_40px_rgba(255,102,0,0.1)] transition-all">
                 <div className="w-14 h-14 shrink-0 rounded-full bg-[#FF6600] text-white flex items-center justify-center shadow-[0_4px_15px_rgba(255,102,0,0.4)]">
                   {feat.icon ? (
-                    <img src={feat.icon.startsWith('http') ? feat.icon : `http://localhost:5002/${feat.icon}`} alt={feat.iconAlt || feat.title} className="w-8 h-8 object-contain filter brightness-0 invert" />
+                    <img src={feat.icon.startsWith('http') ? feat.icon : `/${feat.icon}`} alt={feat.iconAlt || feat.title} className="w-8 h-8 object-contain filter brightness-0 invert" />
                   ) : (
                     <Star size={24} strokeWidth={2.5} />
                   )}
@@ -290,8 +257,8 @@ function Intro() {
           {/* RIGHT SIDE: Counter Cards (Without Icons, as requested) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-6">
             {[
-              { val: 1000, suffix: '+', label: 'Happy Customers', link: null },
-              { val: 33, suffix: '', label: 'Years Experience', link: null },
+              { val: 3000, suffix: '+', label: 'Happy Customers', link: null },
+              { val: 33, suffix: '+', label: 'Years Experience', link: null },
               { val: 100, suffix: '%', label: 'Safe Delivery', link: null },
               { val: 100, suffix: '+', label: 'Quality Products', link: '/products' }
             ].map((card: any, idx: number) => (
@@ -435,12 +402,12 @@ function FeaturedProducts() {
 function Services() {
   const items = [
     { name: 'Crate Packing', img: '/images/services/ai/crate_packing.png', href: '/services', desc: 'Custom ISPM-15 wooden crates for heavy machinery and export cargo.' },
-    { name: 'Stretch Wrapping', img: '/images/services/ai/stretch_wrapping.png', href: '/services', desc: 'Automated pallet stretch wrapping for load stability and protection.' },
-    { name: 'Anti-Rust Coating', img: '/images/services/ai/anti_rust.png', href: '/services', desc: 'VCI film treatment and anti-rust oil for long-term metal protection.' },
-    { name: 'Export lashing', img: '/images/services/ai/export_lashing_clean.png', href: '/services', desc: 'High-tension lashing for ODC cargo, containers, and flatracks.' },
-    { name: 'Vacuum Packing', img: '/images/services/ai/vacuum_packing.png', href: '/services', desc: 'Moisture-proof aluminum barrier foil packing for sensitive electronics.' },
-    { name: 'Wooden Pallets', img: '/images/services/ai/wooden_pallets.png', href: '/products', desc: 'Custom 2-way and 4-way entry pallets for domestic and export use.' },
-    { name: 'Corrugated Boxes', img: '/images/services/ai/corrugated_boxes.png', href: '/products', desc: 'Heavy-duty 9-ply boxes for automotive and retail logistics.' },
+    { name: 'Stretch Wrapping', img: '/images/services/ai/stretch_wrapping.png', href: '/products/vacuum-wrapping/stretch-wrapping', desc: 'Automated pallet stretch wrapping for load stability and protection.' },
+    { name: 'Anti-Rust Coating', img: '/images/services/ai/anti_rust.png', href: '/products/protective-materials/rust-preventive-spray', desc: 'VCI film treatment and anti-rust oil for long-term metal protection.' },
+    { name: 'Export lashing', img: '/images/services/ai/export_lashing_clean.png', href: '/products/corrugated-cargo-securing/container-lashing', desc: 'High-tension lashing for ODC cargo, containers, and flatracks.' },
+    { name: 'Vacuum Packing', img: '/images/services/ai/vacuum_packing.png', href: '/products/vacuum-wrapping/vacuum-packaging', desc: 'Moisture-proof aluminum barrier foil packing for sensitive electronics.' },
+    { name: 'Wooden Pallets', img: '/images/services/ai/wooden_pallets.png', href: '/products/pallet-systems/wooden-pallets', desc: 'Custom 2-way and 4-way entry pallets for domestic and export use.' },
+    { name: 'Corrugated Boxes', img: '/images/services/ai/corrugated_boxes.png', href: '/products/corrugated-cargo-securing/corrugated-boxes', desc: 'Heavy-duty 9-ply boxes for automotive and retail logistics.' },
     { name: 'On-Site Packing', img: '/images/services/ai/onsite_packing.png', href: '/services', desc: 'Our mobile teams pack your machinery at your factory or warehouse.' },
   ];
 
@@ -501,32 +468,33 @@ function Services() {
           whileHover={{ animationPlayState: "paused" }}
         >
           {[...items, ...items].map((s, idx) => (
-            <motion.div
-              key={idx}
-              whileHover={{ y: -12, scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="w-[300px] h-[350px] shrink-0 rounded-[32px] overflow-hidden relative group transition-all duration-300 hover:shadow-[0_20px_40px_rgba(255,102,0,0.3)]"
-            >
-              <Image 
-                src={s.img} 
-                alt={s.name} 
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110" 
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1A1F2C] via-[#1A1F2C]/40 to-transparent group-hover:via-[#1A1F2C]/60 transition-all opacity-90"></div>
+            <Link href={s.href} key={idx} passHref>
+              <motion.div
+                whileHover={{ y: -12, scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="w-[300px] h-[350px] shrink-0 rounded-[32px] overflow-hidden relative group transition-all duration-300 hover:shadow-[0_20px_40px_rgba(255,102,0,0.3)] block"
+              >
+                <Image 
+                  src={s.img} 
+                  alt={s.name} 
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1F2C] via-[#1A1F2C]/40 to-transparent group-hover:via-[#1A1F2C]/60 transition-all opacity-90"></div>
 
-              {/* Smooth Glow Border on Hover */}
-              <div className="absolute inset-0 border-[3px] border-[#FF6600]/0 group-hover:border-[#FF6600]/50 rounded-[32px] transition-all duration-500 pointer-events-none shadow-[inset_0_0_20px_rgba(255,102,0,0)] group-hover:shadow-[inset_0_0_20px_rgba(255,102,0,0.2)]"></div>
+                {/* Smooth Glow Border on Hover */}
+                <div className="absolute inset-0 border-[3px] border-[#FF6600]/0 group-hover:border-[#FF6600]/50 rounded-[32px] transition-all duration-500 pointer-events-none shadow-[inset_0_0_20px_rgba(255,102,0,0)] group-hover:shadow-[inset_0_0_20px_rgba(255,102,0,0.2)]"></div>
 
-              <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                <p className="text-[#FF6600] text-[10px] font-black uppercase tracking-[0.2em] mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Service Excellence</p>
-                <h3 className="text-white text-2xl font-black mb-3 leading-tight">{s.name}</h3>
-                <p className="text-slate-300 text-[13px] font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 line-clamp-2">{s.desc}</p>
-              </div>
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <p className="text-[#FF6600] text-[10px] font-black uppercase tracking-[0.2em] mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Service Excellence</p>
+                  <h3 className="text-white text-2xl font-black mb-3 leading-tight">{s.name}</h3>
+                  <p className="text-slate-300 text-[13px] font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 line-clamp-2">{s.desc}</p>
+                </div>
 
-              {/* Live "Breathe" Effect */}
-              <div className="absolute inset-0 animate-pulse pointer-events-none bg-[#FF6600]/5 rounded-[32px]"></div>
-            </motion.div>
+                {/* Live "Breathe" Effect */}
+                <div className="absolute inset-0 animate-pulse pointer-events-none bg-[#FF6600]/5 rounded-[32px]"></div>
+              </motion.div>
+            </Link>
           ))}
         </motion.div>
       </div>
@@ -541,49 +509,57 @@ function Industries() {
       title: 'Heavy Engineering',
       subtitle: 'High-Load Protection',
       desc: 'Packaging for turbines, generators & heavy machinery.',
-      img: '/images/industries/ai/heavy_engineering.png'
+      img: '/images/industries/ai/heavy_engineering.png',
+      slug: 'heavy-engineering'
     },
     {
       title: 'Pharmaceuticals',
       subtitle: 'Clean & Compliant',
       desc: 'Hygienic, moisture-proof export packaging solutions.',
-      img: '/images/industries/ai/pharmaceuticals.png'
+      img: '/images/industries/ai/pharmaceuticals.png',
+      slug: 'pharmaceutical'
     },
     {
       title: 'Automotive',
       subtitle: 'Precision & Safety',
       desc: 'Damage-proof transport for auto components & assemblies.',
-      img: '/images/industries/ai/automotive.png'
+      img: '/images/industries/ai/automotive.png',
+      slug: 'automotive'
     },
     {
       title: 'FMCG & Retail',
       subtitle: 'Fast & Scalable',
       desc: 'Bulk packaging for retail logistics and distribution.',
-      img: '/images/industries/ai/fmcg_retail.png'
+      img: '/images/industries/ai/fmcg_retail.png',
+      slug: 'fmcg-consumer'
     },
     {
       title: 'Defence & Aerospace',
       subtitle: 'Critical Protection',
       desc: 'High-security packaging for sensitive equipment.',
-      img: '/images/industries/ai/defence_aerospace.png'
+      img: '/images/industries/ai/defence_aerospace.png',
+      slug: 'defence-aerospace'
     },
     {
       title: 'Energy & Power',
       subtitle: 'Heavy Duty',
       desc: 'Export packaging for transformers & power equipment.',
-      img: '/images/industries/ai/energy_power.png'
+      img: '/images/industries/ai/energy_power.png',
+      slug: 'energy-power'
     },
     {
       title: 'IT & Electronics',
       subtitle: 'Shock-Proof',
       desc: 'Anti-static and secure packaging for electronics.',
-      img: '/images/industries/ai/it_electronics.png'
+      img: '/images/industries/ai/it_electronics.png',
+      slug: 'electronics-technology'
     },
     {
       title: 'Chemical & Hazmat',
       subtitle: 'Safe Handling',
       desc: 'Hazard-compliant packaging with leak protection.',
-      img: '/images/industries/ai/chemical_hazmat.png'
+      img: '/images/industries/ai/chemical_hazmat.png',
+      slug: 'chemical-hazmat'
     }
   ];
 
@@ -644,32 +620,33 @@ function Industries() {
           whileHover={{ animationPlayState: "paused" }}
         >
           {[...industries, ...industries].map((item, idx) => (
-            <motion.div
-              key={idx}
-              whileHover={{ y: -12, scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="w-[300px] h-[350px] shrink-0 rounded-[32px] overflow-hidden relative group transition-all duration-300 hover:shadow-[0_20px_40px_rgba(255,102,0,0.3)]"
-            >
-              <Image 
-                src={item.img} 
-                alt={item.title} 
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110" 
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1A1F2C] via-[#1A1F2C]/40 to-transparent group-hover:via-[#1A1F2C]/60 transition-all opacity-90"></div>
+            <Link href={`/industries/${item.slug}`} key={idx} passHref>
+              <motion.div
+                whileHover={{ y: -12, scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="w-[300px] h-[350px] shrink-0 rounded-[32px] overflow-hidden relative group transition-all duration-300 hover:shadow-[0_20px_40px_rgba(255,102,0,0.3)] block"
+              >
+                <Image 
+                  src={item.img} 
+                  alt={item.title} 
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1F2C] via-[#1A1F2C]/40 to-transparent group-hover:via-[#1A1F2C]/60 transition-all opacity-90"></div>
 
-              {/* Smooth Glow Border on Hover */}
-              <div className="absolute inset-0 border-[3px] border-[#FF6600]/0 group-hover:border-[#FF6600]/50 rounded-[32px] transition-all duration-500 pointer-events-none shadow-[inset_0_0_20px_rgba(255,102,0,0)] group-hover:shadow-[inset_0_0_20px_rgba(255,102,0,0.2)]"></div>
+                {/* Smooth Glow Border on Hover */}
+                <div className="absolute inset-0 border-[3px] border-[#FF6600]/0 group-hover:border-[#FF6600]/50 rounded-[32px] transition-all duration-500 pointer-events-none shadow-[inset_0_0_20px_rgba(255,102,0,0)] group-hover:shadow-[inset_0_0_20px_rgba(255,102,0,0.2)]"></div>
 
-              <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                <p className="text-[#FF6600] text-[10px] font-black uppercase tracking-[0.2em] mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">{item.subtitle}</p>
-                <h3 className="text-white text-2xl font-black mb-3 leading-tight">{item.title}</h3>
-                <p className="text-slate-300 text-[13px] font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 line-clamp-2">{item.desc}</p>
-              </div>
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <p className="text-[#FF6600] text-[10px] font-black uppercase tracking-[0.2em] mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">{item.subtitle}</p>
+                  <h3 className="text-white text-2xl font-black mb-3 leading-tight">{item.title}</h3>
+                  <p className="text-slate-300 text-[13px] font-medium leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 line-clamp-2">{item.desc}</p>
+                </div>
 
-              {/* Live "Breathe" Effect */}
-              <div className="absolute inset-0 animate-pulse pointer-events-none bg-[#FF6600]/5 rounded-[32px]"></div>
-            </motion.div>
+                {/* Live "Breathe" Effect */}
+                <div className="absolute inset-0 animate-pulse pointer-events-none bg-[#FF6600]/5 rounded-[32px]"></div>
+              </motion.div>
+            </Link>
           ))}
         </motion.div>
       </div>
@@ -713,7 +690,7 @@ function GlobalPartner() {
             {[
               "ISPM-15 Certified",
               "ISPM-15 Compliant",
-              "1000+ Customers Served",
+              "3000+ Customers Served",
               "33+ Years Experience"
             ].map((check) => (
               <div key={check} className="flex items-center gap-3">
@@ -1099,182 +1076,9 @@ function ProcessSection() {
   );
 }
 
-// ── TESTIMONIALS ──────────────────────────────────────────────────────────────
-function Testimonials() {
-  const reviews = [
-    {
-      name: 'Rajesh Sharma',
-      role: 'Global Logistics Head',
-      company: 'TATA Motors',
-      logo: '/images/CompaniesLogo/Tata.jpg',
-      text: "Zero-damage record across 500+ international shipments. Europack is our most reliable packaging partner.",
-      stars: 5,
-      avatar: 'R',
-      gradient: 'from-[#FF6600] to-[#CC5200]'
-    },
-    {
-      name: "Priya Kulkarni",
-      role: 'Supply Chain Director',
-      company: 'Siemens India',
-      logo: '/images/CompaniesLogo/Piramal.png',
-      text: "They engineered a custom lashing solution our in-house team couldn't design. Outstanding expertise.",
-      stars: 5,
-      avatar: 'P',
-      gradient: 'from-[#005F9E] to-[#00395E]'
-    },
-    {
-      name: "Michael D'Souza",
-      role: 'Procurement Manager',
-      company: 'L&T',
-      logo: '/images/CompaniesLogo/LarsenandTurbo.avif',
-      text: "Their documentation support and phytosanitary compliance handling saves us tremendous time and cost.",
-      stars: 5,
-      avatar: 'M',
-      gradient: 'from-[#1A1F2C] to-[#2D3A4D]'
-    },
-  ];
 
-  return (
-    <section className="py-32 bg-[#1A1F2C] relative overflow-hidden">
-      {/* Cinematic Background Image */}
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
-        <img src="/images/home/ocean_lashing.png" alt="Industrial Background" className="w-full h-full object-cover grayscale" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1A1F2C] via-transparent to-[#1A1F2C]" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-block px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 text-[#FF6600] text-xs font-black uppercase tracking-[0.3em] mb-6"
-          >
-            Verified Trust
-          </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-5xl md:text-8xl font-black text-white tracking-tighter leading-none mb-6"
-          >
-            Customer <span className="text-[#FF6600]">Voices.</span>
-          </motion.h2>
-          <p className="text-slate-400 text-lg font-medium max-w-xl mx-auto uppercase tracking-widest text-[10px]">Trusted by 1000+ Industrial Leaders Worldwide</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {reviews.map((r, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="group glass-card p-10 rounded-[48px] border border-white/10 relative overflow-hidden hover:-translate-y-3 hover:border-orange-500/30 transition-all duration-500 bg-white/5 backdrop-blur-xl"
-            >
-              {/* Subtle Quote Icon Background */}
-              <Quote className="absolute -top-4 -right-4 w-32 h-32 opacity-[0.05] text-white group-hover:opacity-[0.1] transition-opacity" />
-
-              <div className="flex items-center justify-between mb-8 relative z-10">
-                <div className="flex gap-1.5">
-                  {Array(r.stars).fill(0).map((_, j) => (
-                    <Star key={j} size={15} fill="#FF6600" className="text-[#FF6600] drop-shadow-[0_0_8px_rgba(255,102,0,0.6)]" />
-                  ))}
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                  <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Verified Case</span>
-                </div>
-              </div>
-
-              <div className="relative z-10 min-h-[140px]">
-                <p className="text-white text-lg font-bold leading-relaxed italic mb-8 opacity-90">
-                  "{r.text}"
-                </p>
-              </div>
-
-              <div className="w-full h-[1px] bg-white/10 mb-8 relative" />
-
-              <div className="flex items-center gap-5 relative z-10">
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${r.gradient} flex items-center justify-center text-white font-black text-xl shadow-lg relative group-hover:scale-110 transition-transform`}>
-                  {r.avatar}
-                </div>
-                <div className="flex-1">
-                  <p className="font-black text-white text-base leading-none mb-1.5">{r.company}</p>
-                  <div className="flex items-center gap-2">
-                    <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest leading-none">
-                      {r.role}
-                    </p>
-                    <div className="w-[1px] h-3 bg-white/10" />
-                    <img src={r.logo} alt={r.company} className="h-3 object-contain brightness-0 invert opacity-60" />
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="text-center mt-20">
-          <Link
-            href="/clients"
-            className="inline-flex items-center gap-3 bg-white/5 border border-white/10 text-white px-10 py-5 rounded-2xl font-black uppercase tracking-[0.2em] text-xs hover:bg-[#FF6600] hover:border-[#FF6600] transition-all group"
-          >
-            View Our Full Case Library
-            <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 // ── TEAM ──────────────────────────────────────────────────────────────────────
-
-// ── TRUSTED BY ────────────────────────────────────────────────────────────────
-function TrustedBy() {
-  const logos = [
-    { name: 'TATA', src: '/images/CompaniesLogo/Tata.jpg' },
-    { name: 'Bharat Forge', src: '/images/CompaniesLogo/Bharat-Forge-Logo-Vector.svg-.png' },
-    { name: 'L&T', src: '/images/CompaniesLogo/LarsenandTurbo.avif' },
-    { name: 'Godrej', src: '/images/CompaniesLogo/godrej-logo-design-in-red.webp' },
-    { name: 'Mahindra', src: '/images/CompaniesLogo/Mahindra_Auto.png' },
-    { name: 'Piramal', src: '/images/CompaniesLogo/Piramal.png' },
-    { name: 'Bombardier', src: '/images/CompaniesLogo/Bombardier.png' },
-    { name: 'Shell', src: '/images/CompaniesLogo/Shell.jpeg' },
-    { name: 'Ford', src: '/images/CompaniesLogo/fORD.png' },
-    { name: 'General Motors', src: '/images/CompaniesLogo/General_Motors_(logo_with_wordmark,_horizontal).svg.png' },
-    { name: 'Indian Oil', src: '/images/CompaniesLogo/Indian-Oil.png' },
-    { name: 'Alstom', src: '/images/CompaniesLogo/Alstom.png' },
-    { name: 'ABB', src: '/images/CompaniesLogo/Abs.png' },
-    { name: 'Emcure', src: '/images/CompaniesLogo/Emcure.png' },
-    { name: 'Andritz', src: '/images/CompaniesLogo/Andritz_Hydro_Logo.svg' },
-    { name: 'Volkswagen', src: '/images/CompaniesLogo/volkswagen-logo-brand-car-symbol-with-name-black-design-german-automobile-illustration-free-vector.jpg' },
-    { name: 'TAFE', src: '/images/CompaniesLogo/Tractors_and_Farm_Equipment_Limited.svg' },
-    { name: 'Bharat Petroleum', src: '/images/CompaniesLogo/BharatPetroleum.png' },
-  ];
-  return (
-    <section className="py-20 bg-[#1A1F2C] overflow-hidden">
-      <p className="text-center text-xs font-black text-[#FF6600] uppercase tracking-[0.3em] mb-12">Trusted By Global Manufacturing Leaders</p>
-      <div className="flex gap-16 overflow-hidden items-center">
-        <div className="flex gap-20 animate-[marquee_20s_linear_infinite] items-center whitespace-nowrap">
-          {[...logos, ...logos, ...logos].map((l, i) => (
-            <div key={i} className="bg-white/5 p-8 rounded-2xl border border-white/5 backdrop-blur-md shrink-0 flex items-center justify-center w-[200px] h-[120px] hover:bg-white/10 transition-all duration-500 hover:scale-105 group">
-              <img
-                src={l.src}
-                alt={l.name}
-                title={l.name}
-                className="max-h-12 max-w-[140px] object-contain grayscale group-hover:grayscale-0 opacity-50 group-hover:opacity-100 transition-all duration-500"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 
 // ── CONTACT SECTION ───────────────────────────────────────────────────────────
 function ContactSection({ onOpenModal }: { onOpenModal: () => void }) {
@@ -1291,17 +1095,31 @@ function ContactSection({ onOpenModal }: { onOpenModal: () => void }) {
               { icon: <Phone size={20} strokeWidth={2.5} />, text: '+91 98201 93702', sub: 'Dhanik Chheda' },
               { icon: <Mail size={20} strokeWidth={2.5} />, text: 'sales@europackindia.in', sub: 'Procurement & Sales Enquiries' },
               { icon: <MapPin size={20} strokeWidth={2.5} />, text: '101, ML SPACES, Railway Station Rd, near Vile Parle, above Bharat Bank, Navpada, Kamala Nagar, Vile Parle West, Mumbai, Maharashtra 400056', sub: 'Head Office — Europack' },
-            ].map((c, i) => (
-              <div key={i} className="flex items-center gap-5 p-5 rounded-3xl bg-slate-50 mb-3 border border-transparent hover:border-orange-200 hover:bg-white hover:shadow-xl hover:shadow-orange-500/5 transition-all duration-500 group">
-                <div className="w-12 h-12 rounded-2xl bg-orange-100 flex items-center justify-center text-[#FF6600] group-hover:scale-110 transition-transform duration-500">
-                  {c.icon}
-                </div>
-                <div>
-                  <p className="font-black text-[#1A1F2C] text-sm group-hover:text-[#FF6600] transition-colors">{c.text}</p>
-                  <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">{c.sub}</p>
-                </div>
-              </div>
-            ))}
+            ].map((c, i) => {
+              const isAddress = c.sub.includes('Head Office');
+              const Component = isAddress ? 'a' : 'div';
+              const extraProps = isAddress ? { 
+                href: "https://www.google.com/maps/place/Europack+-+Wooden%2FPlastic+Pallets+%7C+Euro+Pallet+%7C+Export+Seaworthy+Packing/@19.1005383,72.8415319,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7c9b714400005:0x403023715f4cb567!8m2!3d19.1005383!4d72.8415319!16s%2Fg%2F11f4_klg3v?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D",
+                target: "_blank",
+                rel: "noopener noreferrer"
+              } : {};
+
+              return (
+                <Component 
+                  key={i} 
+                  {...extraProps}
+                  className="flex items-center gap-5 p-5 rounded-3xl bg-slate-50 mb-3 border border-transparent hover:border-orange-200 hover:bg-white hover:shadow-xl hover:shadow-orange-500/5 transition-all duration-500 group no-underline"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-orange-100 flex items-center justify-center text-[#FF6600] group-hover:scale-110 transition-transform duration-500">
+                    {c.icon}
+                  </div>
+                  <div>
+                    <p className="font-black text-[#1A1F2C] text-sm group-hover:text-[#FF6600] transition-colors">{c.text}</p>
+                    <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">{c.sub}</p>
+                  </div>
+                </Component>
+              );
+            })}
             <button
               onClick={onOpenModal}
               className="mt-6 inline-flex items-center gap-2 bg-[#FF6600] text-white px-8 py-4 rounded-xl font-black uppercase text-[11px] tracking-widest hover:bg-[#e65c00] transition-colors shadow-lg shadow-orange-100"
@@ -1347,7 +1165,7 @@ export default function NewHomepageClient() {
   return (
     <main>
       <Hero onOpenModal={openEnquiryModal} />
-      <PartnerBar />
+      <ClientLogoSection />
       <Intro />
       <FeaturedProducts />
       <Services />
@@ -1358,8 +1176,7 @@ export default function NewHomepageClient() {
       <ProcessSection />
       <GalleryPreview />
       <VideosSection />
-      <Testimonials />
-      <TrustedBy />
+      <ClientLogoSection />
       <ContactSection onOpenModal={openEnquiryModal} />
       <TechFAQ onOpenModal={openEnquiryModal} />
     </main>

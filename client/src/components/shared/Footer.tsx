@@ -29,9 +29,40 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useModal } from '../../context/ModalContext';
 import { fetchAPI } from '@/lib/api';
 
+const DEFAULT_FOOTER_DATA = {
+  description: "India's trusted leader in industrial packaging since 1993. Specialists in ISPM-15 certified wooden crates, vacuum packing, export packaging, and heavy engineering solutions.",
+  socialLinks: [
+    { name: 'WhatsApp', link: '#' },
+    { name: 'LinkedIn', link: '#' },
+    { name: 'YouTube', link: 'https://www.youtube.com/@EUROPACK-i6t/videos' },
+    { name: 'Instagram', link: '#' }
+  ],
+  contact: {
+    headOffice: {
+      address: '101, M. L. Spaces, D. J. Road Station Road, Vile Parle West, Mumbai – 400056, Maharashtra, India',
+      phones: [
+        { number: '+91 9833776290', label: 'Divyesh Chokshi' },
+        { number: '+91 98201 93702', label: 'Dhanik Chheda' }
+      ]
+    }
+  },
+  trustIndicators: {
+    experienceYears: '33+',
+    clientCount: '3000+'
+  },
+  bottom: {
+    copyright: `© ${new Date().getFullYear()} Europack . All rights reserved.`,
+    links: [
+      { name: 'Privacy Policy', link: '/privacy' },
+      { name: 'Terms of Service', link: '/terms' },
+      { name: 'Sitemap', link: '/sitemap' }
+    ]
+  }
+};
+
 export default function Footer() {
   const { openEnquiryModal } = useModal();
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<any>(DEFAULT_FOOTER_DATA);
   const [products, setProducts] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [openAccordions, setOpenAccordions] = useState<Record<string, boolean>>({});
@@ -44,10 +75,15 @@ export default function Footer() {
           fetchAPI('/products')
         ]);
         
-        if (footerRes.success) setData(footerRes.data);
-        if (productsRes.success) setProducts(productsRes.data);
+        if (footerRes.success && footerRes.data) {
+          setData(footerRes.data);
+        }
+        if (productsRes.success) {
+          setProducts(productsRes.data);
+        }
       } catch (err) {
         console.error('Footer fetch error:', err);
+        // Fallback already set in state initialization
       } finally {
         setLoading(false);
       }
@@ -59,7 +95,8 @@ export default function Footer() {
     setOpenAccordions(prev => ({ ...prev, [key]: !prev[key] }));
   };
 
-  if (loading || !data) return (
+  // We no longer block if data is missing, we use defaults
+  if (loading && !data) return (
     <div className="py-20 bg-[#0B0F19] flex items-center justify-center">
        <Loader2 className="animate-spin text-[#FF6600]" size={40} />
     </div>
@@ -157,7 +194,6 @@ export default function Footer() {
                 { name: 'Services', link: '/services' },
 
                 { name: 'Our Clients', link: '/clients' },
-                { name: 'Testimonials', link: '/testimonials' },
                 { name: 'Blog', link: '/blog' },
                 { name: 'Careers', link: '/careers' },
               ].map((link, idx) => (
@@ -257,17 +293,22 @@ export default function Footer() {
           <div>
             <ColumnHeader title="Head Office" id="head-office" />
             <div className="space-y-8">
-               <div className="flex gap-5">
-                 <div className="w-12 h-12 rounded-2xl bg-[#FF6600]/10 flex items-center justify-center text-[#FF6600] shrink-0">
-                    <MapPin size={22} strokeWidth={2.5} />
-                 </div>
-                 <div className="space-y-1">
-                   <p className="text-white font-black text-sm uppercase tracking-widest">Europack Mumbai</p>
-                   <p className="text-slate-400 text-sm leading-relaxed">
-                     101, ML SPACES, Railway Station Rd, near Vile Parle,<br/>above Bharat Bank, Navpada, Kamala Nagar,<br/>Vile Parle West, Mumbai, Maharashtra 400056
-                   </p>
-                 </div>
-               </div>
+                <a 
+                  href="https://www.google.com/maps/place/Europack+-+Wooden%2FPlastic+Pallets+%7C+Euro+Pallet+%7C+Export+Seaworthy+Packing/@19.1005383,72.8415319,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7c9b714400005:0x403023715f4cb567!8m2!3d19.1005383!4d72.8415319!16s%2Fg%2F11f4_klg3v?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex gap-5 group/map transition-all"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-[#FF6600]/10 flex items-center justify-center text-[#FF6600] shrink-0 group-hover/map:scale-110 group-hover/map:bg-[#FF6600] group-hover/map:text-white transition-all">
+                     <MapPin size={22} strokeWidth={2.5} />
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-white font-black text-sm uppercase tracking-widest group-hover/map:text-[#FF6600] transition-colors">Europack Mumbai</p>
+                    <p className="text-slate-400 text-sm leading-relaxed group-hover/map:text-slate-200 transition-colors">
+                      101, ML SPACES, Railway Station Rd, near Vile Parle,<br/>above Bharat Bank, Navpada, Kamala Nagar,<br/>Vile Parle West, Mumbai, Maharashtra 400056
+                    </p>
+                  </div>
+                </a>
                <div className="space-y-5 pl-[68px]">
                  {[
                    { number: '+91 9833776290', label: 'Divyesh Chokshi' },

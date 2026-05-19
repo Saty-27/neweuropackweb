@@ -7,7 +7,7 @@ import { useModal } from '@/context/ModalContext';
 import { partnersList } from '@/data/partners';
 
 const testimonials = [
-  { name: 'Rajesh Sharma', role: 'Global Logistics Head', company: 'TATA Motors', text: 'Europack has been our packaging partner for 7 years. Zero-damage record across 500+ international shipments.', stars: 5 },
+  { name: 'Rajesh Sharma', role: 'Global Logistics Head', company: 'TATA Motors', text: 'Europack has been our packaging partner for 7 years. Zero-damage record across 1000+ international shipments.', stars: 5 },
   { name: 'Priya Kulkarni', role: 'Supply Chain Director', company: 'Siemens India', text: 'They engineered a custom lashing solution for a 12-tonne transformer that our in-house team couldn\'t design. Outstanding.', stars: 5 },
   { name: 'Michael D\'Souza', role: 'Procurement Manager', company: 'Larsen & Toubro', text: 'Their documentation support and phytosanitary compliance handling saves us tremendous time.', stars: 5 },
   { name: 'Ananya Verma', role: 'Operations Head', company: 'Bharat Forge', text: 'Europack delivered a turnkey packing solution for our Germany export within 48 hours of the order — truly impressive.', stars: 5 },
@@ -27,7 +27,7 @@ export default function ClientsClient() {
           <h1 className="text-5xl md:text-[80px] font-black text-white tracking-tighter leading-[0.9] mb-4">
             Customers & <br/> <span className="text-[#FF6600]">Testimonials</span>
           </h1>
-          <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-medium">Trusted by 1000+ of India's leading manufacturers, exporters, and multinationals to protect their global reputation.</p>
+          <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-medium">Trusted by 3000+ of India's leading manufacturers, exporters, and multinationals to protect their global reputation.</p>
         </div>
       </section>
       <section className="py-24 bg-white">
@@ -78,7 +78,7 @@ export default function ClientsClient() {
       <section className="py-24 bg-[#FF6600] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"/>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-8">
-          <h2 className="text-4xl md:text-7xl font-black text-white tracking-tighter">Join 1000+ satisfied <br/> industrial partners.</h2>
+          <h2 className="text-4xl md:text-7xl font-black text-white tracking-tighter">Join 3000+ satisfied <br/> industrial partners.</h2>
           <p className="text-orange-100 text-xl font-medium">Get your customised packaging quote and technical blueprint today.</p>
           <button 
             onClick={openEnquiryModal}

@@ -17,6 +17,8 @@ const industries = [
   { icon: <FileCheck size={28}/>, name: 'Aerospace', desc: 'Strict Compliance Cases' }
 ];
 
+import Counter from '../common/Counter';
+
 export default function ContactTrust() {
   return (
     <section className="bg-white">
@@ -51,15 +53,21 @@ export default function ContactTrust() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 max-w-4xl mx-auto border-t border-slate-200">
              <div className="text-center">
-                <p className="text-4xl md:text-5xl font-black text-[#1A1F2C] mb-2">1000+</p>
+                <p className="text-4xl md:text-5xl font-black text-[#1A1F2C] mb-2">
+                  <Counter value={3000} suffix="+" />
+                </p>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Global Customers</p>
              </div>
              <div className="text-center border-x border-slate-200">
-                <p className="text-4xl md:text-5xl font-black text-[#ff6a00] mb-2">33+</p>
+                <p className="text-4xl md:text-5xl font-black text-[#ff6a00] mb-2">
+                  <Counter value={33} suffix="+" />
+                </p>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Years Experience</p>
              </div>
              <div className="text-center">
-                <p className="text-4xl md:text-5xl font-black text-[#1A1F2C] mb-2">500+</p>
+                <p className="text-4xl md:text-5xl font-black text-[#1A1F2C] mb-2">
+                  <Counter value={1000} suffix="+" />
+                </p>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500">Export Projects</p>
              </div>
           </div>

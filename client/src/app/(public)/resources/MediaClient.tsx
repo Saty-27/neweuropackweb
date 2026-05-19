@@ -50,7 +50,7 @@ export default function MediaClient({ items, settings }: MediaClientProps) {
 
   const getImageUrl = (path: string) => {
     if (!path) return '';
-    return path.startsWith('http') ? path : `http://localhost:5002/${path}`;
+    return path.startsWith('http') ? path : `/${path}`;
   };
 
   const FileIcon = ({ format }: { format: string }) => {

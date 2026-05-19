@@ -57,9 +57,6 @@ export default function BlogFeatured({ post }: any) {
                 {post.author}
               </div>
               <div className="flex items-center gap-3 text-white text-[10px] font-black uppercase tracking-widest opacity-60">
-                <Calendar size={14}/> {post.date}
-              </div>
-              <div className="flex items-center gap-3 text-white text-[10px] font-black uppercase tracking-widest opacity-60">
                 <Clock size={14}/> {post.readTime}
               </div>
             </div>

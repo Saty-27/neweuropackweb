@@ -36,7 +36,6 @@ const navItems = [
     name: 'Resources',
     href: '/blog',
     children: [
-      { name: 'Testimonials', href: '/testimonials', icon: <Quote size={18} /> },
       { name: 'Knowledge Blog', href: '/blog', icon: <Mail size={18} /> },
       { name: 'Project Gallery', href: '/gallery', icon: <Search size={18} /> },
       { name: 'Video Tours', href: '/videos', icon: <Video size={18} /> },
@@ -120,7 +119,7 @@ export default function Header() {
       {/* Top Banner */}
       <div className="hidden lg:flex bg-[#1A1F2C] text-white text-[12px] font-bold py-2.5 z-[190] relative">
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-center">
-          <span className="text-slate-400 uppercase tracking-widest">India's #1 Trusted Industrial Packaging Solutions Provider</span>
+          <span className="text-slate-400 uppercase tracking-widest">India’s Largest Industrial Packaging Experts.</span>
           <div className="flex items-center gap-8">
             <a href="tel:+919820090775" className="flex items-center gap-2 hover:text-[#FF6600] transition-colors">
               <Phone size={12} className="text-[#FF6600]" /> +91 98200 90775

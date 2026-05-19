@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import ServicePageClient from './ServicePageClient';
 
 async function getServiceData(slug: string) {
-  const res = await fetch(`http://localhost:5002/api/services/${slug}`, {
+  const res = await fetch(`/api/services/${slug}`, {
     next: { revalidate: 3600 }
   });
   if (!res.ok) return null;

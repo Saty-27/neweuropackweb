@@ -22,7 +22,7 @@ const seedWelcome = async () => {
       backgroundMobileImage: "images/banners/welcome-bg.png",
       featureCards: [],
       counterCards: [
-        { icon: "users", number: "1000+", label: "Happy Customers" },
+        { icon: "users", number: "3000+", label: "Happy Customers" },
         { icon: "clock", number: "33", label: "Years Experience" },
         { icon: "shield", number: "100%", label: "Safe Delivery" },
         { icon: "globe", number: "50+", label: "Cities Served" }

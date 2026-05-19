@@ -19,12 +19,14 @@ interface ServicePageClientProps {
   service: any;
 }
 
+import Counter from '../../../../components/common/Counter';
+
 export default function ServicePageClient({ service }: ServicePageClientProps) {
   const { openEnquiryModal } = useModal();
 
   const getImageUrl = (path: string) => {
     if (!path) return '';
-    return path.startsWith('http') ? path : `http://localhost:5002/${path}`;
+    return path.startsWith('http') ? path : `/${path}`;
   };
 
   const schemaData = {
@@ -34,7 +36,7 @@ export default function ServicePageClient({ service }: ServicePageClientProps) {
     "provider": {
        "@type": "Organization",
        "name": "Europack",
-       "logo": "http://localhost:5002/logo.png"
+       "logo": "/logo.png"
     },
     "description": service.seo?.metaDescription || service.description?.paragraph,
     "areaServed": "India",
@@ -106,7 +108,10 @@ export default function ServicePageClient({ service }: ServicePageClientProps) {
          {/* Hero Decorators */}
          <div className="absolute bottom-12 right-12 hidden lg:flex flex-col items-end gap-6">
             <div className="flex items-center gap-4 text-right">
-               <span className="text-[10px] font-black uppercase text-white/40 tracking-[0.2em]">33+ Years <br/> Experience</span>
+               <span className="text-[10px] font-black uppercase text-white/40 tracking-[0.2em] leading-tight">
+                <Counter value={33} suffix="+" className="text-xl text-[#FF6600] block mb-1" />
+                Years <br/> Experience
+               </span>
                <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#FF6600]">
                   <ShieldCheck size={28} />
                </div>

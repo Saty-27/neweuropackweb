@@ -8,7 +8,7 @@ const uploadFile = async (file: File) => {
   formData.append('file', file);
   
   const token = localStorage.getItem('adminToken');
-  const res = await fetch('http://localhost:5002/api/upload', {
+  const res = await fetch('/api/upload', {
     method: 'POST',
     headers: { 'Authorization': `Bearer ${token}` },
     body: formData
@@ -221,7 +221,7 @@ export default function GlobalSectionManager() {
             <div style={{ border: '2px dashed #cbd5e0', padding: '2rem', textAlign: 'center', background: '#F7FAFC', borderRadius: '8px' }}>
               {globalData.backgroundImage ? (
                 <div style={{ position: 'relative' }}>
-                  <img src={`http://localhost:5002/${globalData.backgroundImage}`} alt="Hero BG" style={{ width: '100%', maxHeight: '200px', objectFit: 'cover', borderRadius: '8px' }} />
+                  <img src={`/${globalData.backgroundImage}`} alt="Hero BG" style={{ width: '100%', maxHeight: '200px', objectFit: 'cover', borderRadius: '8px' }} />
                   <button onClick={() => handleUpdate('backgroundImage', '')} style={{ position: 'absolute', top: -10, right: -10, background: 'red', color: 'white', border: 'none', borderRadius: '50%', width: 24, height: 24, cursor: 'pointer' }}>✕</button>
                 </div>
               ) : (
@@ -241,9 +241,9 @@ export default function GlobalSectionManager() {
               {globalData.videoUrl ? (
                 <div style={{ position: 'relative' }}>
                   {globalData.videoUrl.match(/\.(mp4|webm|ogg)$/) ? (
-                    <video src={`http://localhost:5002/${globalData.videoUrl}`} controls style={{ width: '100%', maxHeight: '200px', borderRadius: '8px' }} />
+                    <video src={`/${globalData.videoUrl}`} controls style={{ width: '100%', maxHeight: '200px', borderRadius: '8px' }} />
                   ) : (
-                    <img src={`http://localhost:5002/${globalData.videoUrl}`} alt="Hero Media" style={{ width: '100%', maxHeight: '200px', objectFit: 'contain', borderRadius: '8px' }} />
+                    <img src={`/${globalData.videoUrl}`} alt="Hero Media" style={{ width: '100%', maxHeight: '200px', objectFit: 'contain', borderRadius: '8px' }} />
                   )}
                   <button onClick={() => handleUpdate('videoUrl', '')} style={{ position: 'absolute', top: -10, right: -10, background: 'red', color: 'white', border: 'none', borderRadius: '50%', width: 24, height: 24, cursor: 'pointer' }}>✕</button>
                 </div>
@@ -275,7 +275,7 @@ export default function GlobalSectionManager() {
          <div style={{ background: '#EDF2F7', padding: '0.8rem 1.5rem', fontWeight: 700, fontSize: '0.9rem', color: '#4A5568' }}>Live Configuration Preview</div>
          <div style={{ background: '#000', padding: '4rem 2rem', position: 'relative', overflow: 'hidden' }}>
             {globalData.backgroundImage && (
-              <img src={`http://localhost:5002/${globalData.backgroundImage}`} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.4 }} alt="Preview" />
+              <img src={`/${globalData.backgroundImage}`} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.4 }} alt="Preview" />
             )}
             <div style={{ position: 'relative', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', alignItems: 'center' }}>
                <div>

@@ -68,6 +68,7 @@ import serviceRoutes from './routes/serviceRoutes';
 import activityRoutes from './routes/activityRoutes';
 import jobRoutes from './routes/jobRoutes';
 import analyticsRoutes from './routes/analyticsRoutes';
+import siteSettingsRoutes from './routes/siteSettingsRoutes';
 
 
 // Connect to MongoDB
@@ -119,6 +120,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/monitoring', activityRoutes);
 app.use('/api/jobs', jobRoutes);
 app.use('/api/analytics', analyticsRoutes);
+app.use('/api/site-settings', siteSettingsRoutes);
 
 
 // Static Images

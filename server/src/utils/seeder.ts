@@ -1,10 +1,16 @@
 import User from '../models/User';
+import SiteSettings from '../models/SiteSettings';
 
 /**
  * Seed Super Admin identity and migrate legacy roles/permissions
  */
 export const seedSuperAdmin = async () => {
   try {
+    // Drop indexes on SiteSettings to clear any legacy unique indices (filename_1)
+    try {
+      await SiteSettings.collection.dropIndexes();
+    } catch (e) {}
+
     // 1. Global Role Migration (Legacy -> New RBAC)
     // Synchronize 'SuperAdmin' (no space) to 'Super Admin'
     await User.updateMany(
@@ -50,25 +56,27 @@ export const seedSuperAdmin = async () => {
     );
 
     // 3. Ensure Super Admin Identity Exists
-    const adminExists = await User.findOne({ email: 'admin@europack.in' });
+    // Delete legacy super admin if it exists to cleanly migrate
+    await User.deleteMany({ email: 'admin@europack.in' });
+
+    const adminExists = await User.findOne({ email: 'Dhanik@ChairpersonEuropack' });
 
     if (!adminExists) {
       await User.create({
         name: 'Super Admin',
-        email: 'admin@europack.in',
-        password: 'adminpassword123',
+        email: 'Dhanik@ChairpersonEuropack',
+        password: 'Dhanik@27--,,',
         role: 'Super Admin',
         permissions: fullPermissions,
         status: 'active'
       });
       console.log('✅ Super Admin identity seeded and legacy identifiers synchronized');
     } else {
-      // In case the email exists but role wasn't Super Admin
-      if (adminExists.role !== 'Super Admin') {
-        adminExists.role = 'Super Admin';
-        adminExists.permissions = fullPermissions;
-        await adminExists.save();
-      }
+      adminExists.password = 'Dhanik@27--,,';
+      adminExists.role = 'Super Admin';
+      adminExists.permissions = fullPermissions;
+      await adminExists.save();
+      console.log('✅ Super Admin identity credentials updated');
     }
   } catch (err) {
     console.error('❌ Failed to synchronize industrial identity matrix:', err);

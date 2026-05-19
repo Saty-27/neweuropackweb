@@ -3,12 +3,12 @@ import NewHomepageClient from './HomepageClient';
 import StructuredData from '../../components/public/StructuredData';
 
 export const metadata: Metadata = {
-  title: "Europack | India's #1 Trusted Industrial Packaging Solutions",
-  description: "Europack is India's trusted leader in ISPM-15 certified wooden crates, wooden pallets, corrugated boxes, dunnage bags, and precision industrial packaging. 33+ years, 1000+ customers.",
+  title: "Europack | India's Largest Industrial Packaging Experts.",
+  description: "Europack is India's trusted leader in ISPM-15 certified wooden crates, wooden pallets, corrugated boxes, dunnage bags, and precision industrial packaging. 33+ years, 3000+ customers.",
   keywords: ["wooden pallets", "corrugated boxes", "industrial packaging", "custom crates", "Europack", "export packaging", "ISPM-15", "dunnage bags"],
   openGraph: {
-    title: "Europack | India's #1 Trusted Industrial Packaging Solutions",
-    description: "India's trusted leader in ISPM-15 certified industrial packaging. 1000+ customers, 33+ years.",
+    title: "Europack | India's Largest Industrial Packaging Experts.",
+    description: "India's trusted leader in ISPM-15 certified industrial packaging. 3000+ customers, 33+ years.",
     siteName: "Europack",
     type: "website"
   }

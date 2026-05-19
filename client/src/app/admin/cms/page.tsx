@@ -10,10 +10,10 @@ export default function CMSPage() {
   // Home Page Content State
   const [homeContent, setHomeContent] = useState({
     heroTitle: 'Premium Industrial\nPackaging Solutions',
-    heroSubtitle: 'Global standards in wooden pallets, corrugated boxes, and custom industrial packaging. Trusted by 1000+ businesses worldwide for over 33 years.',
-    statsClients: '1000+',
-    statsExperience: '33',
-    whatsappNumber: '1234567890'
+    heroSubtitle: 'Global standards in wooden pallets, corrugated boxes, and custom industrial packaging. Trusted by 3000+ businesses worldwide for over 33+ years.',
+    statsClients: '3000+',
+    statsExperience: '33+',
+    whatsappNumber: '9833776290'
   });
 
   useEffect(() => {

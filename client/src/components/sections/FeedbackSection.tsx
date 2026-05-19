@@ -17,7 +17,7 @@ export default function FeedbackSection() {
 
   const loadApprovedFeedback = async () => {
     try {
-      const res = await fetch('http://localhost:5002/api/feedback/approved');
+      const res = await fetch('/api/feedback/approved');
       const data = await res.json();
       if (data.success) setFeedbacks(data.data);
     } catch (error) {
@@ -30,7 +30,7 @@ export default function FeedbackSection() {
     setLoading(true);
 
     try {
-      const res = await fetch('http://localhost:5002/api/feedback', {
+      const res = await fetch('/api/feedback', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

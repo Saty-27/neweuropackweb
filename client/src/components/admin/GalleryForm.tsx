@@ -117,7 +117,7 @@ export default function GalleryForm({ item, settings, onClose, onSave, mode }: G
 
   const getImageUrl = (path: string) => {
     if (!path) return '';
-    return path.startsWith('http') ? path : `http://localhost:5002/${path}`;
+    return path.startsWith('http') ? path : `/${path}`;
   };
 
   const GOOGLE_FONTS = ['Inter', 'Outfit', 'Poppins', 'Montserrat', 'Roboto', 'Playfair Display'];

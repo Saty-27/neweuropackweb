@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import InquiryModal from '../../../components/layout/InquiryModal';
 import TechFAQ from '../../../components/shared/TechFAQ';
+import ClientLogoSection from '../../../components/shared/ClientLogoSection';
 
 export default function AboutClient() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -52,7 +53,7 @@ export default function AboutClient() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-5xl md:text-[72px] lg:text-[100px] font-black text-white tracking-tighter leading-[0.9] drop-shadow-2xl"
               >
-                33 Years of <br />
+                <CountUp end={33} duration={3} suffix="+" /> Years of <br />
                 <span className="text-[#FF6600] drop-shadow-[0_0_30px_rgba(255,102,0,0.5)] uppercase">Industrial Protection.</span>
               </motion.h1>
 
@@ -421,42 +422,63 @@ export default function AboutClient() {
         </div>
       </section>
 
-      {/* SECTION 7: ENGINEERED WORKFLOW */}
-      <section className="py-32 bg-white">
-        <div className="container max-w-7xl mx-auto px-6">
-          <div className="text-center mb-24 space-y-4">
-            <h2 className="text-4xl md:text-6xl font-black text-[#1A1F2C] tracking-tighter">Our Engineered <span className="text-[#FF6600]">Workflow.</span></h2>
-          </div>
+      {/* SECTION 6.5: THE 100% GUARANTEE MATRIX */}
+      <section className="py-24 bg-white">
+        <div className="container max-w-7xl mx-auto px-6 text-center max-w-4xl">
+           <h2 className="text-4xl lg:text-6xl font-black text-[#1A1F2C] mb-8 tracking-tighter leading-tight">Why The World's Biggest <br/> Manufacturing Brands <span className="text-[#FF6600]">Trust Us</span></h2>
+           <p className="text-slate-500 text-lg leading-relaxed mb-12 font-medium">
+             Our enterprise customers don't just buy wooden boxes; they buy insurance against supply chain failure. Across our top 50 corporate accounts, Europack maintains a verifiable 100% zero-claim delivery rate on international ocean freights. 
+           </p>
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bg-slate-50 p-10 rounded-[40px] border border-slate-100 hover:shadow-xl transition-all">
+                 <h3 className="text-5xl font-black text-[#FF6600] mb-4">0%</h3>
+                 <p className="font-black text-[#1A1F2C] mb-3 uppercase tracking-widest text-[10px]">Customs Hold Rate</p>
+                 <p className="text-slate-500 text-sm font-medium leading-relaxed">Flawless ISPM-15 IPPC stamping and pre-cleared phytosanitary documentation.</p>
+              </div>
+              <div className="bg-slate-50 p-10 rounded-[40px] border border-slate-100 hover:shadow-xl transition-all">
+                 <h3 className="text-5xl font-black text-[#FF6600] mb-4">100%</h3>
+                 <p className="font-black text-[#1A1F2C] mb-3 uppercase tracking-widest text-[10px]">In-House QA</p>
+                 <p className="text-slate-500 text-sm font-medium leading-relaxed">Everything from wood moisture testing to structural lashing is tested in our own labs.</p>
+              </div>
+              <div className="bg-slate-50 p-10 rounded-[40px] border border-slate-100 hover:shadow-xl transition-all">
+                 <h3 className="text-5xl font-black text-[#FF6600] mb-4">24 Hrs</h3>
+                 <p className="font-black text-[#1A1F2C] mb-3 uppercase tracking-widest text-[10px]">Emergency Depolyment</p>
+                 <p className="text-slate-500 text-sm font-medium leading-relaxed">Mobile packing teams ready to dispatch across India within a single day.</p>
+              </div>
+           </div>
+        </div>
+      </section>
 
-          <div className="relative">
-            {/* Animated Progress Line */}
-            <div className="hidden lg:block absolute top-[48px] left-0 w-full h-[2px] bg-slate-100">
-              <motion.div 
-                initial={{ width: '0%' }}
-                whileInView={{ width: '100%' }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
-                className="h-full bg-[#FF6600]"
-              />
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-16">
+      {/* SECTION 7: COMPREHENSIVE ONBOARDING PROCESS */}
+      <section className="py-32 bg-slate-50 border-y border-slate-100">
+        <div className="container max-w-7xl mx-auto px-6">
+           <div className="text-center mb-20 space-y-4">
+              <h2 className="text-4xl md:text-6xl font-black text-[#1A1F2C] tracking-tighter leading-tight">The Corporate <br/> <span className="text-[#FF6600]">Onboarding Process.</span></h2>
+              <p className="text-slate-500 text-lg mt-4 max-w-2xl mx-auto font-medium">How we integrate Europack packaging science into your existing logistics framework.</p>
+           </div>
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                { step: '01', title: 'Technical Audit', desc: 'Analyzing load mass, dimensions, and center of gravity.' },
-                { step: '02', title: 'Custom Design', desc: 'Blueprinting support pillars and structural load frames.' },
-                { step: '03', title: 'Grade Match', desc: 'Selecting ISPM-15 wood and moisture barrier materials.' },
-                { step: '04', title: 'Precision Packing', desc: 'Export packing by mobile professional on-site teams.' },
-                { step: '05', title: 'Final Dispatch', desc: 'Technical documentation and phytosanitary clearance.' },
-              ].map((item, i) => (
-                <div key={i} className="relative z-10 text-center group">
-                  <div className="w-24 h-24 rounded-[40px] bg-white border-2 border-slate-100 text-[#1A1F2C] text-3xl font-black flex items-center justify-center mb-8 mx-auto group-hover:bg-[#FF6600] group-hover:text-white group-hover:border-[#FF6600] transition-all duration-500 shadow-xl group-hover:scale-110">
-                    {item.step}
-                  </div>
-                  <h4 className="text-xl font-black text-[#1A1F2C] mb-4 group-hover:text-[#FF6600] transition-colors">{item.title}</h4>
-                  <p className="text-slate-400 text-sm leading-relaxed font-bold">{item.desc}</p>
-                </div>
+                { step: '1', title: 'Facility Audit', desc: 'Our engineers visit your manufacturing plant to analyze your products, handling equipment, and storage limits.' },
+                { step: '2', title: 'CAD Protoyping', desc: 'We design digital packaging blueprints factoring in cargo weight, CG, and maritime shear forces.' },
+                { step: '3', title: 'Sample Load Test', desc: 'We build a physical prototype and undergo drop, vibration, and moisture testing before mass production.' },
+                { step: '4', title: 'Workflow Integration', desc: 'We sync our delivery schedules via ERP directly with your assembly line dispatch to ensure JIT delivery.' }
+              ].map(phase => (
+                 <motion.div 
+                   key={phase.step}
+                   initial={{ opacity: 0, y: 20 }}
+                   whileInView={{ opacity: 1, y: 0 }}
+                   viewport={{ once: true }}
+                   transition={{ delay: parseInt(phase.step) * 0.1 }}
+                   className="bg-white p-10 rounded-[40px] shadow-sm relative pt-16 border border-slate-100 hover:shadow-2xl transition-all group"
+                 >
+                    <div className="absolute -top-6 left-10 w-16 h-16 bg-[#FF6600] rounded-2xl flex items-center justify-center text-white font-black text-2xl shadow-xl shadow-orange-500/30 group-hover:scale-110 transition-transform">
+                       {phase.step}
+                    </div>
+                    <h3 className="text-2xl font-black text-[#1A1F2C] mb-4 uppercase tracking-tight">{phase.title}</h3>
+                    <p className="text-slate-500 leading-relaxed font-medium">{phase.desc}</p>
+                 </motion.div>
               ))}
-            </div>
-          </div>
+           </div>
         </div>
       </section>
 
@@ -522,7 +544,7 @@ export default function AboutClient() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
             {[
-              { customer: "Siemens India", role: "Logistics Head", text: "Zero-damage record across 500+ international projects. Europack is our most reliable partner." },
+              { customer: "Siemens India", role: "Logistics Head", text: "Zero-damage record across 1000+ international projects. Europack is our most reliable partner." },
               { customer: "TATA Motors", role: "SCM Director", text: "Their technical documentation and compliance handling saves us tremendous time and port-fees." }
             ].map((t, i) => (
               <div key={i} className="p-12 bg-slate-50 border border-slate-100 rounded-[48px] relative group hover:bg-white hover:shadow-2xl transition-all duration-500">
@@ -540,6 +562,8 @@ export default function AboutClient() {
           </div>
         </div>
       </section>
+      {/* SECTION: CLIENT LOGOS */}
+      <ClientLogoSection />
 
       {/* SECTION 10: FINAL CTA */}
       <section className="py-40 bg-[#0B0F19] relative overflow-hidden">
@@ -555,7 +579,7 @@ export default function AboutClient() {
               <h2 className="text-5xl md:text-[84px] font-black text-white leading-[0.9] tracking-tighter">
                 Ready to work with <br/> <span className="text-[#FF6600] drop-shadow-[0_0_20px_rgba(255,102,0,0.3)]">PACKAGING EXPERTS?</span>
               </h2>
-              <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-medium">Join 1000+ satisfied industrial partners. Get a customized technical blueprint and quote within 24 hours.</p>
+              <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-medium">Join 3000+ satisfied industrial partners. Get a customized technical blueprint and quote within 24 hours.</p>
             </motion.div>
             
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 pt-6">

@@ -40,7 +40,7 @@ export default function IndustriesSection() {
 
   const getImageUrl = (path: string) => {
     if (!path) return '';
-    return path.startsWith('http') ? path : `http://localhost:5002/${path}`;
+    return path.startsWith('http') ? path : `/${path}`;
   };
 
   if (isLoading || industries.length === 0) return null;

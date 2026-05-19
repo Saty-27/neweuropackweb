@@ -59,7 +59,7 @@ export const getFooter = async (req: Request, res: Response) => {
         },
         trustIndicators: {
           experienceYears: '33+',
-          clientCount: '1000+',
+          clientCount: '3000+',
           specialty: 'Export Specialists'
         },
         ctaStrip: {

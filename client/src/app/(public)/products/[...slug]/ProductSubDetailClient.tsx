@@ -12,6 +12,7 @@ import {
 import type { Category, SubCategory } from '../../../../constants/productsData';
 import type { GeneratedProductContent } from '../../../../lib/productContentGenerator';
 import { useModal } from '../../../../context/ModalContext';
+import Counter from '../../../../components/common/Counter';
 
 // ──────────────────────────────────────────────
 // HELPERS
@@ -42,7 +43,7 @@ function SectionHeading({ label, title }: { label: string; title: string }) {
 function getImageUrl(path: string) {
   if (!path) return '/images/banners/banner_main.png';
   if (path.startsWith('http') || path.startsWith('/')) return path;
-  return `http://localhost:5002/${path}`;
+  return `/${path}`;
 }
 
 // ──────────────────────────────────────────────
@@ -163,7 +164,7 @@ export default function ProductSubDetailClient({
 
             {/* Trust badges */}
             <div className="flex flex-wrap gap-2 pt-2">
-              {['ISPM-15 Certified', 'ISO 9001:2015', '33+ Years', 'Pan-India Delivery', '1000+ Clients'].map((b, i) => (
+              {['ISPM-15 Certified', 'ISO 9001:2015', '33+ Years', 'Pan-India Delivery', '3000+ Clients'].map((b, i) => (
                 <span key={i} className="px-3 py-1.5 bg-slate-50 border border-slate-100 rounded-xl text-[9px] font-black uppercase tracking-widest text-slate-500">
                   {b}
                 </span>
@@ -193,7 +194,7 @@ export default function ProductSubDetailClient({
                 <Award className="text-[#FF6600] shrink-0 mt-0.5" size={22} />
                 <div>
                   <p className="font-black text-base tracking-tight">{product.subTitle} — Engineering Grade Quality</p>
-                  <p className="text-slate-400 text-xs mt-1">33+ years of industrial packaging excellence. Trusted by 1,000+ clients.</p>
+                  <p className="text-slate-400 text-xs mt-1">33+ years of industrial packaging excellence. Trusted by 3,000+ clients.</p>
                 </div>
               </div>
             </div>
@@ -213,13 +214,15 @@ export default function ProductSubDetailClient({
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-1 gap-4 content-start">
               {[
-                { num: '33+', label: 'Years Experience' },
-                { num: '1000+', label: 'Happy Clients' },
-                { num: '100%', label: 'Quality Assured' },
-                { num: 'PAN', label: 'India' },
+                { val: 33, suffix: '+', label: 'Years Experience' },
+                { val: 3000, suffix: '+', label: 'Happy Clients' },
+                { val: 100, suffix: '%', label: 'Quality Assured' },
+                { val: 'PAN', suffix: '', label: 'India' },
               ].map((s, i) => (
                 <div key={i} className="bg-white border border-slate-100 rounded-2xl p-5 text-center shadow-sm hover:shadow-md transition-shadow">
-                  <p className="text-3xl font-black text-[#FF6600]">{s.num}</p>
+                  <p className="text-3xl font-black text-[#FF6600]">
+                    {typeof s.val === 'number' ? <Counter value={s.val} suffix={s.suffix} /> : s.val}
+                  </p>
                   <p className="text-[9px] font-black text-slate-400 uppercase tracking-widest mt-1">{s.label}</p>
                 </div>
               ))}
@@ -567,6 +570,33 @@ export default function ProductSubDetailClient({
             </div>
           </section>
         )}
+
+        {/* ══════════════════════════════════════
+            SECTION 22.5: CROSS LINKING INDUSTRIES
+        ══════════════════════════════════════ */}
+        <section className="mb-16">
+          <SectionHeading label="Applications" title="Focus Industries" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { name: 'Heavy Engineering', slug: 'heavy-engineering', desc: 'Turbines & Machinery Packaging' },
+              { name: 'Automotive', slug: 'automotive', desc: 'Damage-Proof Component Transit' },
+              { name: 'Pharmaceutical', slug: 'pharmaceutical', desc: 'GMP Compliant Packaging' },
+              { name: 'Logistics', slug: 'logistics', desc: 'Efficient Pallet & Cargo Systems' }
+            ].map((ind, idx) => (
+              <Link key={idx} href={`/industries/${ind.slug}`} className="bg-white border border-slate-100 rounded-2xl p-5 hover:shadow-xl hover:border-[#FF6600]/30 transition-all group flex flex-col justify-between h-full no-underline">
+                <div>
+                  <h3 className="text-sm font-black text-slate-900 group-hover:text-[#FF6600] transition-colors mb-1">{ind.name}</h3>
+                  <p className="text-[11px] font-medium text-slate-500">{ind.desc}</p>
+                </div>
+                <div className="mt-4 flex justify-end">
+                  <div className="w-6 h-6 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-[#FF6600] transition-colors">
+                    <ArrowRight size={12} className="text-slate-400 group-hover:text-white transition-colors" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
 
         {/* ══════════════════════════════════════
             SECTION 23: STRONG CTA

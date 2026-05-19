@@ -8,7 +8,7 @@ const uploadFile = async (file: File) => {
   formData.append('file', file);
   
   const token = localStorage.getItem('adminToken');
-  const res = await fetch('http://localhost:5002/api/upload', {
+  const res = await fetch('/api/upload', {
     method: 'POST',
     headers: { 'Authorization': `Bearer ${token}` },
     body: formData
@@ -198,7 +198,7 @@ export default function WelcomeManager() {
                   <p style={{ margin: '0 0 1rem 0', fontSize: '0.85rem', color: '#718096' }}>Dimensions: ~1443x735px</p>
                   {welcome.backgroundDesktopImage ? (
                     <div style={{ position: 'relative' }}>
-                      <img src={`http://localhost:5002/${welcome.backgroundDesktopImage}`} alt="BG" style={{ width: '100%', height: '120px', objectFit: 'cover', borderRadius: '4px' }} />
+                      <img src={`/${welcome.backgroundDesktopImage}`} alt="BG" style={{ width: '100%', height: '120px', objectFit: 'cover', borderRadius: '4px' }} />
                       <button onClick={() => handleUpdate('backgroundDesktopImage', '')} style={{ position: 'absolute', top: -10, right: -10, background: 'red', color: 'white', border: 'none', borderRadius: '50%', width: 24, height: 24, cursor: 'pointer' }}>✕</button>
                     </div>
                   ) : (
@@ -214,7 +214,7 @@ export default function WelcomeManager() {
                   <p style={{ margin: '0 0 1rem 0', fontSize: '0.85rem', color: '#718096' }}>Dimensions: ~1024x735px</p>
                   {welcome.backgroundTabletImage ? (
                     <div style={{ position: 'relative' }}>
-                      <img src={`http://localhost:5002/${welcome.backgroundTabletImage}`} alt="BG" style={{ width: '100%', height: '120px', objectFit: 'cover', borderRadius: '4px' }} />
+                      <img src={`/${welcome.backgroundTabletImage}`} alt="BG" style={{ width: '100%', height: '120px', objectFit: 'cover', borderRadius: '4px' }} />
                       <button onClick={() => handleUpdate('backgroundTabletImage', '')} style={{ position: 'absolute', top: -10, right: -10, background: 'red', color: 'white', border: 'none', borderRadius: '50%', width: 24, height: 24, cursor: 'pointer' }}>✕</button>
                     </div>
                   ) : (
@@ -230,7 +230,7 @@ export default function WelcomeManager() {
                   <p style={{ margin: '0 0 1rem 0', fontSize: '0.85rem', color: '#718096' }}>Dimensions: ~480x735px</p>
                   {welcome.backgroundMobileImage ? (
                     <div style={{ position: 'relative' }}>
-                      <img src={`http://localhost:5002/${welcome.backgroundMobileImage}`} alt="BG" style={{ width: '100%', height: '120px', objectFit: 'cover', borderRadius: '4px' }} />
+                      <img src={`/${welcome.backgroundMobileImage}`} alt="BG" style={{ width: '100%', height: '120px', objectFit: 'cover', borderRadius: '4px' }} />
                       <button onClick={() => handleUpdate('backgroundMobileImage', '')} style={{ position: 'absolute', top: -10, right: -10, background: 'red', color: 'white', border: 'none', borderRadius: '50%', width: 24, height: 24, cursor: 'pointer' }}>✕</button>
                     </div>
                   ) : (
@@ -287,7 +287,7 @@ export default function WelcomeManager() {
                       <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 'bold', marginBottom: '0.5rem', color: '#4A5568' }}>Icon (44x44)</label>
                       {card.icon ? (
                         <div style={{ position: 'relative', background: '#FEF4EB', padding: '10px', borderRadius: '50%', display: 'inline-block', border: '1px solid var(--admin-primary)' }}>
-                          <img src={`http://localhost:5002/${card.icon}`} style={{ width: '40px', height: '40px', objectFit: 'contain' }} alt="Card Icon" />
+                          <img src={`/${card.icon}`} style={{ width: '40px', height: '40px', objectFit: 'contain' }} alt="Card Icon" />
                           <button onClick={() => updateCard('featureCards', idx, 'icon', '')} style={{ position: 'absolute', top: -5, right: -5, background: 'black', color: 'white', border: 'none', borderRadius: '50%', width: 20, height: 20, cursor: 'pointer', fontSize: '0.6rem' }}>✕</button>
                         </div>
                       ) : (
@@ -359,7 +359,7 @@ export default function WelcomeManager() {
                           <option value="box">Box / Package</option>
                         </select>
                       </div>
-                      <FormInput label="Numeric Value (with symbol)" placeholder="e.g. 1000+" value={card.number} onChange={(e: any) => updateCard('counterCards', idx, 'number', e.target.value)} />
+                      <FormInput label="Numeric Value (with symbol)" placeholder="e.g. 3000+" value={card.number} onChange={(e: any) => updateCard('counterCards', idx, 'number', e.target.value)} />
                       <FormInput label="Subtitle Label" placeholder="e.g. Happy Customers" value={card.label} onChange={(e: any) => updateCard('counterCards', idx, 'label', e.target.value)} />
                     </div>
                   </div>

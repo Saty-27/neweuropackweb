@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Calendar, User, Tag, ArrowRight, Share2, MessageSquare, ChevronRight } from 'lucide-react';
+import { Calendar, User, Tag, ArrowRight, Share2, MessageSquare, ChevronRight, Package, Globe } from 'lucide-react';
 import BlogBlockRenderer from '../../../../components/public/BlogBlockRenderer';
 import { fetchAPI } from '../../../../lib/api';
 import { useModal } from '../../../../context/ModalContext';
@@ -91,7 +91,7 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
   const getImageUrl = (path: string) => {
     if (!path) return '';
     if (path.startsWith('http') || path.startsWith('/')) return path;
-    return `http://localhost:5002/${path}`;
+    return `/${path}`;
   };
 
   // Automated JSON-LD BlogPosting Schema
@@ -252,6 +252,60 @@ export default function BlogDetailClient({ blog }: { blog: Blog }) {
                 </div>
              </motion.section>
           )}
+
+          {/* Cross Links Section */}
+          <motion.section
+             initial={{ opacity: 0, y: 50 }}
+             whileInView={{ opacity: 1, y: 0 }}
+             viewport={{ once: true }}
+             className="pt-24 pb-12"
+          >
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+               {/* Explore Products */}
+               <div className="bg-slate-50 p-10 rounded-[32px] border border-slate-100">
+                  <h3 className="text-xl font-black text-slate-900 tracking-tighter uppercase mb-6 flex items-center gap-3">
+                    <Package size={20} className="text-[#FF6600]" /> Explore Products
+                  </h3>
+                  <ul className="space-y-4">
+                    {[
+                      { name: 'Wooden Pallets', href: '/products/pallet-systems/wooden-pallets' },
+                      { name: 'Corrugated Boxes', href: '/products/corrugated-cargo-securing/corrugated-boxes' },
+                      { name: 'Vacuum Packaging', href: '/products/vacuum-wrapping/vacuum-packaging' },
+                      { name: 'Dunnage Bags', href: '/products/dunnage-bag/air-dunnage-bags' }
+                    ].map((prod, i) => (
+                      <li key={i}>
+                        <Link href={prod.href} className="flex items-center justify-between text-slate-600 font-medium hover:text-[#FF6600] transition-colors group no-underline">
+                          <span>{prod.name}</span>
+                          <ChevronRight size={16} className="text-slate-300 group-hover:text-[#FF6600] group-hover:translate-x-1 transition-all" />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+               </div>
+
+               {/* Focus Industries */}
+               <div className="bg-orange-50 p-10 rounded-[32px] border border-orange-100">
+                  <h3 className="text-xl font-black text-slate-900 tracking-tighter uppercase mb-6 flex items-center gap-3">
+                    <Globe size={20} className="text-[#FF6600]" /> Focus Industries
+                  </h3>
+                  <ul className="space-y-4">
+                    {[
+                      { name: 'Heavy Engineering', href: '/industries/heavy-engineering' },
+                      { name: 'Automotive', href: '/industries/automotive' },
+                      { name: 'Pharmaceutical', href: '/industries/pharmaceutical' },
+                      { name: 'Logistics', href: '/industries/logistics' }
+                    ].map((ind, i) => (
+                      <li key={i}>
+                        <Link href={ind.href} className="flex items-center justify-between text-slate-600 font-medium hover:text-[#FF6600] transition-colors group no-underline">
+                          <span>{ind.name}</span>
+                          <ChevronRight size={16} className="text-slate-300 group-hover:text-[#FF6600] group-hover:translate-x-1 transition-all" />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+               </div>
+             </div>
+          </motion.section>
 
           {/* Lead Magnet CTA */}
           <motion.section 

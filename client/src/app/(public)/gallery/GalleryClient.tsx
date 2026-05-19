@@ -182,12 +182,28 @@ export default function GalleryClient({ items, settings }: GalleryClientProps) {
                         <div className="relative aspect-[4/3] rounded-[48px] overflow-hidden bg-slate-100 shadow-xl border border-slate-50 transition-all duration-700 group-hover:shadow-2xl group-hover:shadow-orange-500/10 group-hover:-translate-y-4">
                            {/* Media Layer */}
                            <div className="absolute inset-0">
-                              <img 
-                                src={getImageUrl(item.image?.url)} 
-                                className="w-full h-full object-cover group-hover:scale-110 transition-all duration-[3000ms]" 
-                                alt={item.image?.alt || item.title}
-                                loading="lazy"
-                              />
+                              {item.type === 'video' ? (
+                                <video 
+                                  src={getImageUrl(item.videoUrl || item.image?.url)} 
+                                  className="w-full h-full object-cover group-hover:scale-110 transition-all duration-[3000ms]" 
+                                  muted 
+                                  loop 
+                                  playsInline
+                                  onMouseOver={e => (e.target as HTMLVideoElement).play()}
+                                  onMouseOut={e => {
+                                    const target = e.target as HTMLVideoElement;
+                                    target.pause();
+                                    target.currentTime = 0;
+                                  }}
+                                />
+                              ) : (
+                                <img 
+                                  src={getImageUrl(item.image?.url)} 
+                                  className="w-full h-full object-cover group-hover:scale-110 transition-all duration-[3000ms]" 
+                                  alt={item.image?.alt || item.title}
+                                  loading="lazy"
+                                />
+                              )}
                               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/20 to-transparent transition-opacity duration-700 opacity-60 group-hover:opacity-100" />
                            </div>
 
@@ -266,15 +282,15 @@ export default function GalleryClient({ items, settings }: GalleryClientProps) {
                initial={{ scale: 0.9, opacity: 0 }}
                animate={{ scale: 1, opacity: 1 }}
                exit={{ scale: 0.9, opacity: 0 }}
-               className="w-full max-w-7xl flex flex-col lg:flex-row gap-8 lg:gap-16 items-center"
+               className="w-full max-w-7xl flex items-center justify-center"
                onClick={e => e.stopPropagation()}
              >
                 {/* Media Container */}
-                <div className="flex-1 w-full aspect-video lg:min-h-[60vh] lg:h-auto rounded-[32px] md:rounded-[64px] overflow-hidden bg-black shadow-2xl border border-white/10 relative group">
+                <div className="w-full aspect-video lg:max-h-[85vh] rounded-[32px] md:rounded-[64px] overflow-hidden bg-black shadow-2xl border border-white/10 relative group flex items-center justify-center">
                    {selectedItem.type === 'video' ? (
-                     selectedItem.videoUrl ? (
+                     selectedItem.videoUrl || selectedItem.image?.url ? (
                        <video 
-                         src={getImageUrl(selectedItem.videoUrl)} 
+                         src={getImageUrl(selectedItem.videoUrl || selectedItem.image?.url)} 
                          controls 
                          autoPlay 
                          className="w-full h-full object-contain"
@@ -290,54 +306,6 @@ export default function GalleryClient({ items, settings }: GalleryClientProps) {
                    ) : (
                      <img src={getImageUrl(selectedItem.image?.url)} className="w-full h-full object-contain" alt={selectedItem.title} />
                    )}
-                </div>
-
-                {/* Narrative Sidebar */}
-                <div className="w-full lg:w-[450px] text-left space-y-6 lg:space-y-12">
-                   <div className="space-y-4 lg:space-y-8">
-                      <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-2xl bg-[#FF6600]/10 border border-[#FF6600]/20 text-[#FF6600] text-[11px] font-black uppercase tracking-[0.2em]">
-                         {selectedItem.type === 'video' ? <VideoIcon size={18} /> : <ImageIcon size={18} />}
-                         {selectedItem.category} Excellence
-                      </div>
-                      <h2 className="text-4xl md:text-6xl font-black text-white leading-[0.9] tracking-tighter uppercase">{selectedItem.title}</h2>
-                      <p className="text-slate-400 text-base md:text-lg font-medium leading-relaxed opacity-80 italic">
-                         "{selectedItem.description}"
-                      </p>
-                   </div>
-
-                   <div className="grid grid-cols-2 gap-4">
-                      <div className="p-6 rounded-3xl bg-white/5 border border-white/5">
-                         <Clock size={24} className="text-[#FF6600] mb-4" />
-                         <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">Status</p>
-                         <p className="text-white font-bold text-sm">Active Project</p>
-                      </div>
-                      <div className="p-6 rounded-3xl bg-white/5 border border-white/5">
-                         <Target size={24} className="text-[#FF6600] mb-4" />
-                         <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">Capability</p>
-                         <p className="text-white font-bold text-sm">{selectedItem.category}</p>
-                      </div>
-                   </div>
-
-                   <div className="flex flex-wrap gap-2 pb-8 border-b border-white/10">
-                      {selectedItem.tags?.map((t: string) => (
-                         <span key={t} className="px-5 py-2.5 bg-slate-900 text-white rounded-full text-[10px] font-black uppercase tracking-widest border border-white/5">#{t}</span>
-                      ))}
-                   </div>
-
-                   <div className="flex flex-col gap-4">
-                      <button 
-                        onClick={() => { closeLightbox(); openEnquiryModal(); }}
-                        className="w-full py-6 bg-[#FF6600] text-white rounded-2xl font-black uppercase tracking-[0.2em] text-[11px] flex items-center justify-center gap-4 hover:bg-[#e65c00] transition-all shadow-2xl shadow-orange-500/20"
-                      >
-                         Enquire Strategy <ExternalLink size={18} />
-                      </button>
-                      <button 
-                        onClick={closeLightbox}
-                        className="w-full py-6 bg-white/5 text-white rounded-2xl font-black uppercase tracking-[0.2em] text-[11px] border border-white/10 hover:bg-white/10 transition-all"
-                      >
-                         Return to Portfolio
-                      </button>
-                   </div>
                 </div>
              </motion.div>
             </div>

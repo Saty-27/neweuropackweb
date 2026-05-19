@@ -4,6 +4,8 @@ import BlogDetailClient from './BlogDetailClient';
 import BlogComingSoonClient from './BlogComingSoonClient';
 import { Metadata } from 'next';
 import { Sparkles } from 'lucide-react';
+import { generateSeoBlogContent } from '../../../../lib/seoBlogGenerator';
+import SeoArticleClient from './SeoArticleClient';
 
 async function getBlog(slug: string) {
   // Priority 1: Check Mock Data for high-fidelity content (50 SEO blogs)
@@ -21,6 +23,26 @@ async function getBlog(slug: string) {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
+  
+  // 1. Check if it's an auto-generated SEO blog
+  const seoContent = generateSeoBlogContent(slug);
+  if (seoContent) {
+    return {
+      title: seoContent.meta.title,
+      description: seoContent.meta.description,
+      keywords: seoContent.meta.keywords,
+      openGraph: {
+        title: seoContent.meta.title,
+        description: seoContent.meta.description,
+        images: [seoContent.hero.image],
+      },
+      alternates: {
+        canonical: `https://europack.in/blog/${slug}`,
+      }
+    };
+  }
+
+  // 2. Fallback to existing blog logic
   const blog = await getBlog(slug);
   if (!blog) return { title: 'Blog Not Found | Europack' };
 
@@ -38,6 +60,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function BlogDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+
+  // 1. Check if it's an auto-generated SEO blog
+  const seoContent = generateSeoBlogContent(slug);
+  if (seoContent) {
+    return <SeoArticleClient content={seoContent} slug={slug} />;
+  }
+
+  // 2. Fallback to existing blog logic
   const blog = await getBlog(slug);
 
   if (!blog) {

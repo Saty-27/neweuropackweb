@@ -100,7 +100,7 @@ export default function IndustryForm({ industry, onClose, onSave }: IndustryForm
 
   const getImageUrl = (path: string) => {
     if (!path) return '';
-    return path.startsWith('http') ? path : `http://localhost:5002/${path}`;
+    return path.startsWith('http') ? path : `/${path}`;
   };
 
   return (

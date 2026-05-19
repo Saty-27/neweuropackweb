@@ -84,6 +84,7 @@ export default function Sidebar() {
   // Dedicated Administrative Sections for High Clearance
   const adminLinks = [
     { name: 'Team Manager', href: '/admin/settings/users', icon: <Shield size={18} />, role: ['Super Admin'] },
+    { name: 'SEO & Integrations', href: '/admin/seo-settings', icon: <Globe size={18} />, role: ['Super Admin', 'Admin'] },
     { name: 'Activity Monitor', href: '/admin/monitoring', icon: <History size={18} />, role: ['Super Admin', 'Admin'] }
   ];
 

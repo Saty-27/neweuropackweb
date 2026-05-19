@@ -67,15 +67,20 @@ export default function ContactLocations() {
                 </h2>
 
                 <div className="space-y-10">
-                  <div className="flex gap-6 group">
-                     <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-[#ff6a00] group-hover:bg-[#ff6a00] group-hover:text-white transition-all shadow-inner">
+                  <a 
+                    href="https://www.google.com/maps/place/Europack+-+Wooden%2FPlastic+Pallets+%7C+Euro+Pallet+%7C+Export+Seaworthy+Packing/@19.1005383,72.8415319,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7c9b714400005:0x403023715f4cb567!8m2!3d19.1005383!4d72.8415319!16s%2Fg%2F11f4_klg3v?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex gap-6 group/map transition-all"
+                  >
+                     <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-[#ff6a00] group-hover/map:bg-[#ff6a00] group-hover/map:text-white transition-all shadow-inner">
                        <MapPin size={24} />
                      </div>
                      <div>
                        <p className="text-[12px] font-black uppercase tracking-widest text-[#ff6a00] mb-2">Primary Address</p>
-                       <p className="text-slate-300 text-lg leading-relaxed font-medium">101, ML SPACES, Railway Station Rd, near Vile Parle,<br />above Bharat Bank, Navpada, Kamala Nagar,<br />Vile Parle West, Mumbai, Maharashtra 400056</p>
+                       <p className="text-slate-300 text-lg leading-relaxed font-medium group-hover/map:text-white transition-colors">101, ML SPACES, Railway Station Rd, near Vile Parle,<br />above Bharat Bank, Navpada, Kamala Nagar,<br />Vile Parle West, Mumbai, Maharashtra 400056</p>
                      </div>
-                  </div>
+                  </a>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                     <div>

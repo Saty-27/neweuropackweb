@@ -185,7 +185,7 @@ export default function CaseStudyForm({ item, settings, onClose, onSave, mode }:
 
   const getImageUrl = (path: string) => {
     if (!path) return '';
-    return path.startsWith('http') ? path : `http://localhost:5002/${path}`;
+    return path.startsWith('http') ? path : `/${path}`;
   };
 
   return (

@@ -7,7 +7,7 @@ import { Phone, Mail, MapPin, AlertCircle } from 'lucide-react';
 
 const quickContacts = [
   { icon: <Mail size={24} />, title: "Email Us", value: "sales@europackindia.in", href: "mailto:sales@europackindia.in" },
-  { icon: <MapPin size={24} />, title: "Visit Us", value: "HQ, Mumbai", href: "#headquarters" },
+  { icon: <MapPin size={24} />, title: "Visit Us", value: "HQ, Mumbai", href: "https://www.google.com/maps/place/Europack+-+Wooden%2FPlastic+Pallets+%7C+Euro+Pallet+%7C+Export+Seaworthy+Packing/@19.1005383,72.8415319,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7c9b714400005:0x403023715f4cb567!8m2!3d19.1005383!4d72.8415319!16s%2Fg%2F11f4_klg3v?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D" },
   { icon: <AlertCircle size={24} />, title: "Emergency Support", value: "24/7 Available", href: "tel:+919820090775", highlight: true }
 ];
 

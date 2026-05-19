@@ -186,7 +186,7 @@ With in-house die-cutting, scoring, and up to 4-colour flexographic printing, we
       { q: 'What is burst strength (BS)?', a: 'Burst strength (kg/cm²) measures how much hydrostatic pressure a box wall can withstand before rupturing. Higher BS means better resistance to punctures and impact damage. Our boxes offer BS up to 14 kg/cm².' },
       { q: 'What is BCT (Box Compression Test)?', a: 'BCT measures the maximum load a filled box can sustain before collapsing under vertical compression. It is critical for multi-tier stacking in warehouses. We test and certify BCT values for every production run.' },
       { q: 'Do you make moisture-resistant corrugated boxes?', a: 'Yes. We offer wax-coated and poly-coated corrugated boxes that significantly resist water absorption, making them ideal for cold-chain, agri-produce, and humid climate exports.' },
-      { q: 'What is the minimum order quantity for corrugated boxes?', a: 'MOQ is typically 500 units for standard sizes. For custom-printed or die-cut designs, MOQ may vary (usually 1,000+ units). We can accommodate smaller trial orders for new clients.' },
+      { q: 'What is the minimum order quantity for corrugated boxes?', a: 'MOQ is typically 500 units for standard sizes. For custom-printed or die-cut designs, MOQ may vary (usually 3,000+ units). We can accommodate smaller trial orders for new clients.' },
       { q: 'What flute types do you offer?', a: 'We offer B-flute (fine, ideal for retail), C-flute (standard, most common), E-flute (very fine, used for inner dividers), and BC double-wall for heavy industrial packaging.' },
       { q: 'Can I get a sample before placing a bulk order?', a: 'Yes. We dispatch physical samples (plain or printed) within 3–5 working days on request. Sample charges may apply and are adjusted against the first bulk order.' },
       { q: 'What is the lead time for custom corrugated boxes?', a: 'Standard plain boxes are ready in 4–5 working days. Custom-printed or die-cut designs require 7–10 working days including plate creation and approval.' },
@@ -547,8 +547,8 @@ function getImageUrl(path: string) {
   if (!path) return '/images/banners/banner_main.png';
   if (path.startsWith('http') || path.startsWith('/images/banners')) return path;
   if (productImageMap[path]) return productImageMap[path];
-  if (path.startsWith('/')) return `http://localhost:5002${path}`;
-  return `http://localhost:5002/${path}`;
+  if (path.startsWith('/')) return `${path}`;
+  return `/${path}`;
 }
 
 // =====================================================

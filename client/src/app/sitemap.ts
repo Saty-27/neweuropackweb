@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { fetchAPI } from '@/lib/api'
+import marketplaceData from '@/constants/marketplaceData.json'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://europackindia.com' // Should be your production URL
@@ -15,6 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/contact',
     '/gallery',
     '/industries',
+    '/company-facts'
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
@@ -22,7 +24,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: route === '' ? 1 : 0.8,
   }))
 
-  // Dynamic products
+  // Marketplace Products
+  const marketplaceProductRoutes = marketplaceData.products.map(p => ({
+    url: `${baseUrl}/products/${p.categoryId}/${p.id}`,
+    lastModified: new Date(marketplaceData.lastUpdated),
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  }));
+
+  // Marketplace Locations
+  const locationRoutes = marketplaceData.locations.map(l => ({
+    url: `${baseUrl}/locations/${l.slug}`,
+    lastModified: new Date(marketplaceData.lastUpdated),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
+  // Marketplace Industries
+  const industryRoutes = marketplaceData.industries.map(i => ({
+    url: `${baseUrl}/industries/${i.slug}`,
+    lastModified: new Date(marketplaceData.lastUpdated),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
+  // Dynamic products (from CMS backend if any)
   let productRoutes: any[] = []
   try {
     const productsRes = await fetchAPI('/products')
@@ -54,5 +80,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error('Sitemap: Failed to fetch blogs', e)
   }
 
-  return [...staticRoutes, ...productRoutes, ...blogRoutes]
+  return [
+    ...staticRoutes, 
+    ...marketplaceProductRoutes,
+    ...locationRoutes,
+    ...industryRoutes,
+    ...productRoutes, 
+    ...blogRoutes
+  ]
 }

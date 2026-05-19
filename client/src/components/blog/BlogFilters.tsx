@@ -4,13 +4,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const categories = [
-  "All Blog",
+  "All Blogs",
   "Wooden Pallets",
-  "Corrugated Boxes",
   "Seaworthy Packing",
-  "Crates & Boxes",
-  "Shrink & Lashing",
-  "Local SEO"
+  "Wooden Boxes",
+  "Shrink Wrapping",
+  "Corrugated Boxes"
 ];
 
 export default function BlogFilters({ activeCategory, setActiveCategory }: any) {

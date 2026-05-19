@@ -64,12 +64,14 @@ export function AboutSection() {
   );
 }
 
+import Counter from '../common/Counter';
+
 export function StatsCards() {
   const stats = [
-    { label: 'High-Impact Projects', value: '1,000+', icon: <Target />, color: 'bg-blue-500' },
-    { label: 'Elite B2B Customers', value: '100+', icon: <Users />, color: 'bg-orange-500' },
-    { label: 'Success Efficiency', value: '98%', icon: <Zap />, color: 'bg-emerald-500' },
-    { label: 'Years of Experience', value: '33', icon: <Calendar />, color: 'bg-purple-500' }
+    { label: 'High-Impact Projects', value: 3000, suffix: '+', icon: <Target />, color: 'bg-blue-500' },
+    { label: 'Elite B2B Customers', value: 100, suffix: '+', icon: <Users />, color: 'bg-orange-500' },
+    { label: 'Success Efficiency', value: 98, suffix: '%', icon: <Zap />, color: 'bg-emerald-500' },
+    { label: 'Years of Experience', value: 33, suffix: '+', icon: <Calendar />, color: 'bg-purple-500' }
   ];
 
   return (
@@ -85,7 +87,9 @@ export function StatsCards() {
                 </div>
 
                 <div className="space-y-1">
-                  <h4 className="text-4xl font-black text-[#1A1F2C] tracking-tighter">{stat.value}</h4>
+                  <h4 className="text-4xl font-black text-[#1A1F2C] tracking-tighter">
+                    <Counter value={stat.value} suffix={stat.suffix} />
+                  </h4>
                   <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">{stat.label}</p>
                 </div>
              </div>

@@ -139,7 +139,7 @@ export default function BlogForm({ initialData, onSave, loading }: BlogFormProps
 
   const getImageUrl = (path: string) => {
     if (!path) return '';
-    return path.startsWith('http') ? path : `http://localhost:5002/${path}`;
+    return path.startsWith('http') ? path : `/${path}`;
   };
 
   const handleUpload = async (e: any, target: 'hero' | number) => {

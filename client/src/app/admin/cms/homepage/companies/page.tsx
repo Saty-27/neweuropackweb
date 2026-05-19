@@ -8,7 +8,7 @@ const uploadFile = async (file: File) => {
   formData.append('file', file);
   
   const token = localStorage.getItem('adminToken');
-  const res = await fetch('http://localhost:5002/api/upload', {
+  const res = await fetch('/api/upload', {
     method: 'POST',
     headers: { 'Authorization': `Bearer ${token}` },
     body: formData
@@ -143,7 +143,7 @@ export default function CompaniesManager() {
             <div style={{ height: '140px', background: '#F7FAFC', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', border: '2px dashed #CBD5E0', borderRadius: '8px', position: 'relative' }}>
               {company.logo ? (
                  <>
-                   <img src={`http://localhost:5002/${company.logo}`} alt={company.name} style={{ maxWidth: '90%', maxHeight: '110px', objectFit: 'contain' }} />
+                   <img src={`/${company.logo}`} alt={company.name} style={{ maxWidth: '90%', maxHeight: '110px', objectFit: 'contain' }} />
                    <button onClick={() => handleUpdate(index, 'logo', '')} style={{ position: 'absolute', top: -10, right: -10, background: 'black', color: 'white', border: 'none', borderRadius: '50%', width: 24, height: 24, cursor: 'pointer', fontSize: '0.7rem' }}>✕</button>
                  </>
               ) : (

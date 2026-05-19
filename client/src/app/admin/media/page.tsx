@@ -84,7 +84,7 @@ export default function MediaManager() {
 
   const getImageUrl = (path: string) => {
     if (!path) return '';
-    return path.startsWith('http') ? path : `http://localhost:5002/${path}`;
+    return path.startsWith('http') ? path : `/${path}`;
   };
 
   const filteredItems = items.filter(i => 

@@ -94,7 +94,7 @@ export default function FooterManager() {
     const formData = new FormData();
     formData.append('file', file);
     try {
-      const res = await fetch(`http://localhost:5002/api/upload?folder=footer`, { method: 'POST', body: formData });
+      const res = await fetch(`/api/upload?folder=footer`, { method: 'POST', body: formData });
       const data = await res.json();
       if (data.success) {
         if (index !== undefined && subField) {
@@ -176,7 +176,7 @@ export default function FooterManager() {
                       <label className="text-sm font-bold text-gray-700">Footer Logo</label>
                       <div className="relative group w-full h-40 border-4 border-dashed rounded-3xl flex flex-col items-center justify-center gap-3 overflow-hidden bg-gray-50 hover:bg-white transition-all">
                         {footer?.logo ? (
-                          <img src={`http://localhost:5002/${footer.logo}`} className="h-full w-full object-contain p-8" />
+                          <img src={`/${footer.logo}`} className="h-full w-full object-contain p-8" />
                         ) : (
                           <Upload className="text-gray-300" size={40} />
                         )}
@@ -326,7 +326,7 @@ export default function FooterManager() {
                           <div className="relative group w-full h-44 border-4 border-dashed rounded-3xl flex flex-col items-center justify-center bg-gray-50 hover:bg-white transition-all overflow-hidden text-center p-4">
                             {footer.backgroundImage ? (
                               <>
-                                <img src={`http://localhost:5002/${footer.backgroundImage}`} className="absolute inset-0 w-full h-full object-cover opacity-30" />
+                                <img src={`/${footer.backgroundImage}`} className="absolute inset-0 w-full h-full object-cover opacity-30" />
                                 <div className="z-10 bg-white/80 p-3 rounded-xl shadow-lg flex flex-col items-center">
                                   <Upload size={20} className="text-orange-600 mb-1" />
                                   <span className="text-[10px] font-black uppercase tracking-widest text-gray-900">Change Pattern</span>
@@ -364,7 +364,7 @@ export default function FooterManager() {
                           <div key={idx} className="flex gap-4 p-6 bg-gray-50 rounded-2xl border-2 border-transparent hover:border-orange-100 transition-all items-center group">
                              <div className="relative w-16 h-16 bg-white rounded-xl border flex items-center justify-center overflow-hidden shrink-0 group-hover:shadow-lg transition-all">
                                 {social.icon ? (
-                                   <img src={`http://localhost:5002/${social.icon}`} className="w-10 h-10 object-contain" />
+                                   <img src={`/${social.icon}`} className="w-10 h-10 object-contain" />
                                 ) : (
                                    <Share2 className="text-gray-300" size={24} />
                                 )}
@@ -461,7 +461,7 @@ export default function FooterManager() {
                   className="min-h-[700px] p-8 relative overflow-y-auto no-scrollbar pt-20"
                   style={{ 
                     backgroundColor: footer.backgroundColor,
-                    backgroundImage: footer.backgroundGradient || (footer.backgroundImage ? `url(http://localhost:5002/${footer.backgroundImage})` : 'none'),
+                    backgroundImage: footer.backgroundGradient || (footer.backgroundImage ? `url(/${footer.backgroundImage})` : 'none'),
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     fontFamily: footer.typography.fontFamily,
@@ -478,7 +478,7 @@ export default function FooterManager() {
                      {footer?.showLogo && (
                         <div className="text-center">
                           <img 
-                            src={footer?.logo ? `http://localhost:5002/${footer.logo}` : '/placeholder-logo.png'} 
+                            src={footer?.logo ? `/${footer.logo}` : '/placeholder-logo.png'} 
                             className="h-10 mx-auto mb-4" 
                           />
                           <p className="text-[10px] opacity-60 px-4">Innovating Industrial Solutions since 1991</p>
@@ -501,7 +501,7 @@ export default function FooterManager() {
                               {footer.socialLinks.map((s: any, i: number) => (
                                 <div key={i} className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center border border-white/10">
                                    {s.icon ? (
-                                      <img src={`http://localhost:5002/${s.icon}`} className="w-5 h-5 object-contain" />
+                                      <img src={`/${s.icon}`} className="w-5 h-5 object-contain" />
                                    ) : <Share2 size={12} />}
                                 </div>
                               ))}

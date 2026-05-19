@@ -12,6 +12,7 @@ import Image from 'next/image';
 import JobApplyModal from '@/components/layout/JobApplyModal';
 import PartnerModal from '@/components/layout/PartnerModal';
 import { fetchAPI } from '@/lib/api';
+import Counter from '@/components/common/Counter';
 
 interface Job {
   _id: string;
@@ -29,10 +30,10 @@ interface Job {
 // --- DATA --- //
 
 const stats = [
-  { value: '33+', label: 'Years Experience', suffix: '' },
-  { value: '1000+', label: 'Global Customers', suffix: '' },
-  { value: '500+', label: 'Export Projects', suffix: '' },
-  { value: 'PAN', label: 'India Operations', suffix: '' },
+  { value: 33, suffix: '+', label: 'Years Experience' },
+  { value: 3000, suffix: '+', label: 'Global Customers' },
+  { value: 1000, suffix: '+', label: 'Export Projects' },
+  { value: 'PAN', suffix: '', label: 'India Operations' },
 ];
 
 const cultureItems = [
@@ -225,7 +226,9 @@ export default function CareersClient() {
                 className="group p-10 rounded-[48px] bg-slate-50 border border-slate-100 hover:border-[#FF6600]/20 hover:shadow-2xl hover:shadow-orange-500/5 transition-all text-center md:text-left"
               >
                 <div className="text-5xl font-black text-[#1A1F2C] tracking-tighter mb-2">
-                  <span className="text-[#FF6600]">{stat.value}</span>{stat.suffix}
+                  <span className="text-[#FF6600]">
+                    {typeof stat.value === 'number' ? <Counter value={stat.value} suffix={stat.suffix} /> : stat.value}
+                  </span>
                 </div>
                 <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{stat.label}</div>
               </motion.div>

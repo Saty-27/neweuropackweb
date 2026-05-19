@@ -113,12 +113,6 @@ export default function ServicesClient() {
                    <p className="text-sm text-slate-500 leading-relaxed font-medium line-clamp-2">{svc.shortDesc}</p>
                    
                    <div className="pt-4 mt-auto space-y-6">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-[#FF6600]">
-                           Technical Specs <ChevronRight size={12} className="group-hover:translate-x-1 transition-transform" />
-                        </div>
-                      </div>
-
                        <button 
                          onClick={() => setSelectedService(svc)}
                          className="w-full py-4 bg-[#1A1F2C] text-white rounded-2xl font-black uppercase tracking-widest text-[10px] hover:bg-[#FF6600] transition-all transform group-hover:-translate-y-1 text-center block"
@@ -294,34 +288,7 @@ export default function ServicesClient() {
 
 
 
-      {/* SECTION 11: TESTIMONIALS */}
-      <section className="py-10 bg-slate-50">
-        <div className="container max-w-7xl mx-auto px-6">
-           <div className="text-center mb-16 space-y-4">
-              <div className="inline-block px-3 py-1 bg-orange-100 text-[#FF6600] text-[10px] font-black uppercase tracking-widest rounded-full">Customer Feedback</div>
-              <h2 className="text-5xl font-black text-[#1A1F2C] tracking-tighter leading-none mb-4">Trusted by <br/> <span className="text-[#FF6600]">Industry Leaders.</span></h2>
-           </div>
-           
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-             {[
-               { name: "S. K. Mehta", role: "SCM Head, Siemens India", text: "Europack's engineering approach to packaging is unparalleled. They don't just crate; they secure and protect." },
-               { name: "Anil Kulkarni", role: "Logistics Manager, ABB", text: "Zero rejections at port for over 3 years. Their ISPM-15 documentation handling is world-class." }
-             ].map((t, i) => (
-                <div key={i} className="p-12 bg-white rounded-[48px] border border-slate-100 shadow-sm relative overflow-hidden group hover:shadow-2xl transition-all">
-                   <Quote className="absolute -top-4 -right-4 w-32 h-32 opacity-5 text-[#FF6600]" />
-                   <p className="text-[#1A1F2C] text-lg font-bold leading-relaxed italic mb-10 relative z-10">"{t.text}"</p>
-                   <div className="flex items-center gap-5 relative z-10">
-                      <div className="w-12 h-12 rounded-full bg-slate-100" />
-                      <div>
-                         <p className="font-black text-[#1A1F2C] text-sm uppercase">{t.role.includes(',') ? t.role.split(',')[1].trim() : t.role}</p>
-                         <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{t.role.includes(',') ? t.role.split(',')[0].trim() : ''}</p>
-                      </div>
-                   </div>
-                </div>
-             ))}
-           </div>
-        </div>
-      </section>
+
 
       {/* SECTION 12: FAQ SECTION */}
       <TechFAQ onOpenModal={openModal} />
@@ -337,7 +304,7 @@ export default function ServicesClient() {
                  <h2 className="text-5xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter">
                    Ready to secure your <br/> <span className="text-[#FF6600] drop-shadow-[0_0_20px_rgba(255,102,0,0.3)]">GLOBAL SHIPMENTS?</span>
                  </h2>
-                 <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-medium">Join 1000+ satisfied industrial partners. Get a customized technical blueprint and quote within 24 hours.</p>
+                 <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-medium">Join 3000+ satisfied industrial partners. Get a customized technical blueprint and quote within 24 hours.</p>
               </div>
               
               <div className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-8 pt-6">
@@ -351,7 +318,7 @@ export default function ServicesClient() {
       {/* Service Detail Modal */}
       <AnimatePresence>
         {selectedService && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8">
+          <div className="fixed inset-0 z-[3000] flex items-center justify-center p-4 md:p-8">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

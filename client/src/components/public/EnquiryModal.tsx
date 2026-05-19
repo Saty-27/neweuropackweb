@@ -38,13 +38,27 @@ export default function EnquiryModal({ isOpen, onClose, serviceName = 'General I
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const res = await fetchAPI('/enquiry', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: JSON.stringify({ ...formData, service: serviceName })
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: 'ab371d0f-9d36-494f-b6c3-b880f8cf5dca',
+          ...formData,
+          service: serviceName,
+          from_name: 'Europack Inquiry',
+          subject: `New Quote Request: ${serviceName}`
+        })
       });
-      if (res.success) {
+      
+      const result = await response.json();
+      if (result.success) {
         setIsSuccess(true);
         toast.success('Enquiry submitted successfully');
+      } else {
+        throw new Error(result.message || 'Failed to submit enquiry');
       }
     } catch (error: any) {
       toast.error(error.message || 'Failed to submit enquiry');
@@ -56,7 +70,7 @@ export default function EnquiryModal({ isOpen, onClose, serviceName = 'General I
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[2000] flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[5000] flex items-center justify-center p-4">
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

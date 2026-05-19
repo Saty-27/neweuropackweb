@@ -116,7 +116,7 @@ const FooterSchema: Schema = new Schema({
 
   trustIndicators: {
     experienceYears: { type: String, default: '33+' },
-    clientCount: { type: String, default: '1000+' },
+    clientCount: { type: String, default: '3000+' },
     specialty: { type: String, default: 'Export Specialists' }
   },
 

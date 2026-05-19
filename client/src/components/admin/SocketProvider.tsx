@@ -14,7 +14,7 @@ export const SocketProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     // Connect to the backend
-    const socketInstance = io('http://localhost:5002');
+    const socketInstance = io('');
 
     socketInstance.on('connect', () => {
       setSocket(socketInstance);

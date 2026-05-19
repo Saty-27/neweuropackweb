@@ -355,7 +355,7 @@ Our engineering team works closely with clients during the design phase to valid
   // ── WHY EUROPACK ──
   const whyEuropack = [
     { title: '33+ Years of Expertise', desc: 'Three decades of industrial packaging engineering for India\'s most demanding export sectors — from turbines to pharmaceuticals.' },
-    { title: '1000+ Active Clients', desc: 'Trusted by Fortune 500 OEMs, EPC contractors, logistics companies, and mid-scale exporters across India and globally.' },
+    { title: '3000+ Active Clients', desc: 'Trusted by Fortune 500 OEMs, EPC contractors, logistics companies, and mid-scale exporters across India and globally.' },
     { title: 'Across Pan India', desc: 'Strategic production facilities ensure fast lead times and seamless pan-India coverage without delays.' },
     { title: '100% Quality Guarantee', desc: 'Every shipment backed by ISO 9001:2015 certified QC processes and full compliance documentation including test reports.' },
   ];
@@ -368,7 +368,7 @@ Our engineering team works closely with clients during the design phase to valid
   ];
 
   // ── SEO CONTENT (500-800 words) ──
-  const seoContent = `Europack Industries is a leading ${productName} manufacturer and supplier in Mumbai, India, serving industrial clients across all major sectors including heavy engineering, automotive, pharmaceutical, chemical, defense, and FMCG. Our ${productName.toLowerCase()} are manufactured at our ISO 9001:2015 certified production facility and are supplied to 1,000+ clients across India and exported to clients in over 40 countries worldwide.
+  const seoContent = `Europack Industries is a leading ${productName} manufacturer and supplier in Mumbai, India, serving industrial clients across all major sectors including heavy engineering, automotive, pharmaceutical, chemical, defense, and FMCG. Our ${productName.toLowerCase()} are manufactured at our ISO 9001:2015 certified production facility and are supplied to 3,000+ clients across India and exported to clients in over 40 countries worldwide.
 
 ${productName} — Technical Excellence at Scale
 

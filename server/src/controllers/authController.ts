@@ -41,7 +41,9 @@ export const login = async (req: Request, res: Response) => {
       return res.status(400).json({ success: false, error: 'Credentials required for ecosystem entry' });
     }
 
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ 
+      email: { $regex: new RegExp(`^${email.trim()}$`, 'i') } 
+    });
     if (!user) {
       return res.status(401).json({ success: false, error: 'Credential validation failed' });
     }

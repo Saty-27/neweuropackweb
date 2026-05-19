@@ -180,7 +180,7 @@ export const palletBlogs4 = {
         '50-99 pallets: Standard pricing',
         '100-499 pallets: 8-12% discount',
         '500-999 pallets: 15-20% discount',
-        '1,000+ pallets: 20-25% discount (negotiable based on ongoing commitment)',
+        '3,000+ pallets: 20-25% discount (negotiable based on ongoing commitment)',
         'Annual contracts: Best pricing, typically 25-30% below list price'
       ]),
       h2('How to Get the Best Price'),

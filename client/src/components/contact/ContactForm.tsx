@@ -25,32 +25,40 @@ export default function ContactForm() {
     setLoading(true);
     
     try {
-      // Map form fields to backend expectations
+      // Map form fields to Web3Forms expectations
       const payload = {
+        access_key: 'ab371d0f-9d36-494f-b6c3-b880f8cf5dca',
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
         company: formData.company,
-        subject: formData.requirement === 'Others' ? formData.otherService : formData.requirement,
-        message: formData.message
+        subject: `New Contact Request: ${formData.requirement === 'Others' ? formData.otherService : formData.requirement}`,
+        message: formData.message,
+        from_name: 'Europack Website'
       };
 
-      const res = await fetchAPI('/contact', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
         body: JSON.stringify(payload)
       });
       
-      if (res.success) {
+      const result = await response.json();
+      
+      if (result.success) {
         toast.success('Technical Requirement Sent!', {
           style: { background: '#1A1F2C', color: '#fff' }
         });
         setSuccess(true);
         setFormData({ name: '', email: '', phone: '', company: '', requirement: 'Export Crating', otherService: '', message: '' });
       } else {
-        toast.error(res.error || 'Failed to submit requirement');
+        toast.error(result.message || 'Failed to submit requirement');
       }
     } catch (err) {
-      toast.error('Network error. Please ensure backend is online.');
+      toast.error('Network error. Please try again later.');
     } finally {
       setLoading(false);
     }

@@ -2,6 +2,8 @@ import { Metadata } from 'next';
 import { fetchAPI } from '../../../lib/api';
 import MediaClient from './MediaClient';
 
+export const dynamic = 'force-dynamic';
+
 async function getMediaData() {
   try {
     const [itemsRes, settingsRes] = await Promise.all([

@@ -17,7 +17,7 @@ import BlogTrust from '@/components/blog/BlogTrust';
 import BlogFAQ from '@/components/blog/BlogFAQ';
 import BlogNewsletter from '@/components/blog/BlogNewsletter';
 import BlogFinalCTA from '@/components/blog/BlogFinalCTA';
-import { getAllMockBlogs } from '@/data/allBlogs';
+import blogIndex from '@/constants/blogIndex.json';
 
 const featuredPost = {
   title: 'Wooden Pallet Manufacturer in Mumbai – Types, Prices & Export Guide (2025)',
@@ -30,23 +30,35 @@ const featuredPost = {
   slug: 'wooden-pallet-manufacturer-mumbai'
 };
 
-// Generate allPosts from the 50-blog system
-const allPosts = getAllMockBlogs().map(blog => ({
-  title: blog.title,
-  category: blog.category,
-  author: blog.author,
-  date: new Date(blog.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
-  readTime: `${blog.analytics.readTime} min read`,
-  img: blog.heroImage,
-  slug: blog.slug,
-}));
+// Generate allPosts from the SEO blog system
+const allPosts = blogIndex.map((blog: any) => {
+  let img = '/images/blog/mumbai-packaging.png'; // Premium default
+  if (blog.product === 'Wooden Pallets') img = '/images/blog/wooden-pallets.png';
+  if (blog.product === 'Seaworthy Packing') img = '/images/blog/seaworthy-packing.png';
+  if (blog.product === 'Wooden Boxes') img = '/images/blog/wooden-crates.png';
+  if (blog.product === 'Shrink Wrapping') img = '/images/blog/shrink-wrapping.png';
+  if (blog.product === 'Corrugated Boxes') img = '/images/blog/corrugated-boxes.png';
+
+  return {
+    title: blog.title,
+    category: blog.product,
+    author: 'Europack Technical Team',
+    date: 'Oct 24, 2024',
+    readTime: '12 min read',
+    img: img,
+    slug: blog.slug,
+  };
+});
 
 export default function BlogPage() {
-  const [activeCategory, setActiveCategory] = useState('All Blog');
+  const [activeCategory, setActiveCategory] = useState('All Blogs');
+  const [visibleCount, setVisibleCount] = useState(24);
 
-  const filteredPosts = activeCategory === 'All Blog' 
+  const filteredPosts = activeCategory === 'All Blogs' 
     ? allPosts 
-    : allPosts.filter(p => p.category === activeCategory);
+    : allPosts.filter((p: any) => p.category === activeCategory);
+
+  const postsToShow = filteredPosts.slice(0, visibleCount);
 
   return (
     <main className="bg-white">
@@ -74,7 +86,19 @@ export default function BlogPage() {
       <BlogStats />
 
       {/* 7. FAQ Grid (Main Articles) */}
-      <BlogGrid posts={filteredPosts} />
+      <BlogGrid posts={postsToShow} />
+
+      {/* Pagination Load More */}
+      {visibleCount < filteredPosts.length && (
+        <div className="flex justify-center pb-20 bg-white">
+          <button 
+            onClick={() => setVisibleCount(v => v + 24)}
+            className="px-10 py-4 bg-[#1A1F2C] text-white rounded-xl font-black text-xs tracking-widest uppercase hover:bg-[#ff6a00] hover:shadow-[0_20px_40px_-10px_rgba(255,106,0,0.4)] transition-all duration-300"
+          >
+            Load More Articles ({filteredPosts.length - visibleCount} remaining)
+          </button>
+        </div>
+      )}
 
       {/* 8. Quick Guides Section */}
       <BlogQuickGuides />

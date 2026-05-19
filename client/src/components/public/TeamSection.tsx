@@ -20,8 +20,8 @@ export default function TeamSection() {
     const loadTeamData = async () => {
       try {
         const [membersRes, settingsRes] = await Promise.all([
-          fetch('http://localhost:5002/api/team').then(res => res.json()),
-          fetch('http://localhost:5002/api/team/settings').then(res => res.json())
+          fetch('/api/team').then(res => res.json()),
+          fetch('/api/team/settings').then(res => res.json())
         ]);
         if (membersRes.success) setMembers(membersRes.data);
         if (settingsRes.success) setSettings(settingsRes.data);
@@ -38,7 +38,7 @@ export default function TeamSection() {
 
   const getImageUrl = (path: string) => {
     if (!path) return '';
-    return path.startsWith('http') ? path : `http://localhost:5002/${path}`;
+    return path.startsWith('http') ? path : `/${path}`;
   };
 
   // Slick Carousel Settings

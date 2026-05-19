@@ -295,7 +295,7 @@ function LivePreview({ settings }: { settings: any }) {
     if (!path) return 'none';
     if (path.startsWith('http')) return `url(${path})`;
     const cleanPath = path.startsWith('/') ? path : `/${path}`;
-    return `url(http://localhost:5002${cleanPath})`;
+    return `url(${cleanPath})`;
   };
 
   const sectionStyle: React.CSSProperties = settings.designMode === 'graphic' ? {

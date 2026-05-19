@@ -75,20 +75,18 @@ const DashboardCard = ({ title, children, glow = false }: any) => (
 export default function YouTubeIntelligence() {
   const [currentDate, setCurrentDate] = useState(new Date());
   
-  // Calculate current earnings logic
+// Calculate current earnings logic
   const revenueStats = useMemo(() => {
-    const today = new Date();
-    const daysPassed = Math.floor((today.getTime() - START_DATE.getTime()) / (1000 * 60 * 60 * 24));
-    const currentTotal = BASE_REVENUE + (daysPassed * DAILY_INCREASE);
+    const currentTotal = 11500;
     const usdEquiv = (currentTotal / 84).toFixed(0); // Approx rate
     
-    // Generate graph data
+    // Generate graph data growing to 10,200 at end of April
     const graphData = [...Array(30)].map((_, i) => ({
       day: i + 1,
-      revenue: BASE_REVENUE + (i * DAILY_INCREASE)
+      revenue: 7300 + (i * 100)
     }));
 
-    return { total: currentTotal, usd: usdEquiv, graphData, daysPassed };
+    return { total: currentTotal, usd: usdEquiv, graphData, april: 10200, may: 1300 };
   }, [currentDate]);
 
   return (
@@ -133,7 +131,7 @@ export default function YouTubeIntelligence() {
                     <div className="flex items-center justify-between">
                        <span className="text-slate-400 font-bold text-xs uppercase tracking-widest">Total Earnings (INR)</span>
                        <div className="flex items-center gap-1 text-green-500 text-xs font-black">
-                          <TrendingUp size={14}/> +₹100 today
+                          <ShieldCheck size={14}/> Active Earnings
                        </div>
                     </div>
                     <div className="flex items-baseline gap-4">
@@ -149,12 +147,12 @@ export default function YouTubeIntelligence() {
 
                   <div className="grid grid-cols-2 gap-4">
                      <div className="p-5 bg-white/5 rounded-2xl border border-white/5">
-                        <p className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-2">Today</p>
-                        <p className="text-xl font-black">₹100</p>
+                        <p className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-2">April Earnings</p>
+                        <p className="text-xl font-black">₹10,200</p>
                      </div>
                      <div className="p-5 bg-white/5 rounded-2xl border border-white/5">
-                        <p className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-2">Yesterday</p>
-                        <p className="text-xl font-black">₹100</p>
+                        <p className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-2">May (Remaining)</p>
+                        <p className="text-xl font-black">₹1,300</p>
                      </div>
                   </div>
 
@@ -163,7 +161,7 @@ export default function YouTubeIntelligence() {
                         <Cpu className="text-[#ff6a00]" size={20} />
                         <div>
                            <p className="text-[10px] font-black text-white uppercase tracking-widest">Growth Forecast</p>
-                           <p className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Expected Next Month: ₹12,000</p>
+                           <p className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Expected Next Month: ₹11,500</p>
                         </div>
                      </div>
                   </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { fetchAPI } from '@/lib/api';
+import { fetchAPI, API_URL } from '@/lib/api';
 import { toast } from 'react-hot-toast';
 
 export default function SubmissionsManager() {
@@ -52,6 +52,14 @@ export default function SubmissionsManager() {
     }
   };
 
+  const getAttachmentUrl = (path: string) => {
+    if (!path) return '#';
+    if (path.startsWith('http')) return path;
+    const baseHost = API_URL.endsWith('/api') ? API_URL.slice(0, -4) : API_URL;
+    const cleanPath = path.startsWith('/') ? path : `/${path}`;
+    return `${baseHost}${cleanPath}`;
+  };
+
   if (loading) return <div>Loading submissions...</div>;
 
   return (
@@ -94,7 +102,7 @@ export default function SubmissionsManager() {
                 <td style={{ padding: '1rem' }}>
                   {s.attachment ? (
                     <a 
-                      href={`http://localhost:5002/${s.attachment}`} 
+                      href={getAttachmentUrl(s.attachment)} 
                       target="_blank" 
                       rel="noopener noreferrer"
                       style={{ 

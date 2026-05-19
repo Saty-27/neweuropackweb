@@ -52,12 +52,12 @@ export default function LoginPage() {
 
         <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
           <div>
-            <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600, color: '#4A5568', fontSize: '0.9rem' }}>Email Address</label>
+            <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 600, color: '#4A5568', fontSize: '0.9rem' }}>Email Address / Username</label>
             <input
-              type="email"
+              type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="admin@europack.in"
+              placeholder="e.g. admin@europack.in"
               style={{ width: '100%', padding: '0.75rem', border: '1px solid #E2E8F0', borderRadius: '6px', outline: 'none' }}
               required
             />

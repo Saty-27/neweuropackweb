@@ -54,7 +54,7 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[999] flex items-center justify-center p-4 md:p-6 overflow-y-auto">
+        <div className="fixed inset-0 z-[4000] flex items-center justify-center p-4 md:p-6 overflow-y-auto">
           <motion.div 
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
@@ -98,7 +98,7 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
                       ))}
                     </ul>
                   </div>
-                  <div className="mt-12 text-[10px] font-black uppercase tracking-[0.2em] text-[#FF6600]">Trusted by 1000+ Leaders</div>
+                  <div className="mt-12 text-[10px] font-black uppercase tracking-[0.2em] text-[#FF6600]">Trusted by 3000+ Leaders</div>
                 </div>
                 <div className="w-full md:w-3/5 p-10">
                   <form onSubmit={handleSubmit} className="space-y-5">

@@ -53,7 +53,6 @@ export default function BlogGrid({ posts }: { posts: any[] }) {
                 {/* Content */}
                 <div className="p-10 flex flex-col flex-grow">
                    <div className="flex items-center gap-6 text-[10px] font-black uppercase tracking-widest text-slate-400 mb-6">
-                      <span className="flex items-center gap-2"><Calendar size={12}/> {post.date}</span>
                       <span className="flex items-center gap-2"><Clock size={12}/> {post.readTime}</span>
                    </div>
 

@@ -29,8 +29,8 @@ export default function Footer() {
     const fetchData = async () => {
       try {
         const [footerRes, productsRes] = await Promise.all([
-          fetch('http://localhost:5002/api/footer'),
-          fetch('http://localhost:5002/api/products')
+          fetch('/api/footer'),
+          fetch('/api/products')
         ]);
         
         const footerJson = await footerRes.json();
@@ -106,7 +106,7 @@ export default function Footer() {
             <div className="flex flex-wrap gap-4">
                {[
                  { label: data.trustIndicators?.experienceYears || '33+', sub: 'Years Experience', icon: <Award size={14}/> },
-                 { label: data.trustIndicators?.clientCount || '1000+', sub: 'Clients', icon: <ShieldCheck size={14}/> }
+                 { label: data.trustIndicators?.clientCount || '3000+', sub: 'Clients', icon: <ShieldCheck size={14}/> }
                ].map((trust, idx) => (
                  <div key={idx} className="flex items-center gap-2 bg-white/5 border border-white/5 px-3 py-2 rounded-xl">
                    <div className="text-[#FF6600]">{trust.icon}</div>
@@ -185,16 +185,47 @@ export default function Footer() {
                <div className="space-y-4">
                  <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Core Services</p>
                  <div className="flex flex-wrap gap-2">
-                   {['Export Packing', 'Vacuum Packing', 'Lashing', 'Container Stuffing'].map(s => (
-                     <span key={s} className="px-3 py-1 bg-white/5 border border-white/5 rounded-lg text-[10px] font-bold text-slate-400">{s}</span>
+                   {[
+                     { name: 'Export Packing', href: '/services' },
+                     { name: 'Vacuum Packing', href: '/products/vacuum-wrapping/vacuum-packaging' },
+                     { name: 'Lashing', href: '/products/corrugated-cargo-securing/container-lashing' },
+                     { name: 'Container Stuffing', href: '/services' }
+                   ].map(s => (
+                     <Link key={s.name} href={s.href} className="px-3 py-1 bg-white/5 border border-white/5 rounded-lg text-[10px] font-bold text-slate-400 hover:text-white hover:bg-[#FF6600]/20 transition-all">
+                       {s.name}
+                     </Link>
                    ))}
                  </div>
                </div>
                <div className="space-y-4 mt-6">
                  <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Focus Industries</p>
                  <div className="flex flex-wrap gap-2">
-                   {['Engineering', 'Automotive', 'Pharma', 'Logistics'].map(i => (
-                     <span key={i} className="px-3 py-1 bg-[#FF6600]/10 border border-[#FF6600]/10 rounded-lg text-[10px] font-bold text-[#FF6600]">{i}</span>
+                   {[
+                     { name: 'Engineering', href: '/industries/heavy-engineering' },
+                     { name: 'Automotive', href: '/industries/automotive' },
+                     { name: 'Pharma', href: '/industries/pharmaceutical' },
+                     { name: 'Logistics', href: '/industries/logistics' }
+                   ].map(i => (
+                     <Link key={i.name} href={i.href} className="px-3 py-1 bg-[#FF6600]/10 border border-[#FF6600]/10 rounded-lg text-[10px] font-bold text-[#FF6600] hover:bg-[#FF6600] hover:text-white transition-all">
+                       {i.name}
+                     </Link>
+                   ))}
+                 </div>
+               </div>
+               <div className="space-y-4 mt-6">
+                 <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Locations</p>
+                 <div className="flex flex-wrap gap-2">
+                   {[
+                     { name: 'Mumbai', href: '/locations/mumbai' },
+                     { name: 'Navi Mumbai', href: '/locations/navi-mumbai' },
+                     { name: 'Thane', href: '/locations/thane' },
+                     { name: 'Vasai', href: '/locations/vasai' },
+                     { name: 'Bhiwandi', href: '/locations/bhiwandi' },
+                     { name: 'Panvel', href: '/locations/panvel' }
+                   ].map(l => (
+                     <Link key={l.name} href={l.href} className="px-3 py-1 bg-[#1A1F2C] border border-white/5 rounded-lg text-[10px] font-bold text-slate-400 hover:text-white hover:border-[#FF6600]/30 transition-all">
+                       {l.name}
+                     </Link>
                    ))}
                  </div>
                </div>
@@ -209,12 +240,17 @@ export default function Footer() {
           <div>
             <ColumnHeader title="Head Office" id="head-office" />
             <div className="space-y-6">
-               <div className="flex gap-4">
-                 <MapPin size={20} className="text-[#FF6600] shrink-0" />
-                 <p className="text-slate-400 text-sm leading-relaxed">
+               <a 
+                 href="https://www.google.com/maps/place/Europack+-+Wooden%2FPlastic+Pallets+%7C+Euro+Pallet+%7C+Export+Seaworthy+Packing/@19.1005383,72.8415319,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7c9b714400005:0x403023715f4cb567!8m2!3d19.1005383!4d72.8415319!16s%2Fg%2F11f4_klg3v?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="flex gap-4 group/map transition-all"
+               >
+                 <MapPin size={20} className="text-[#FF6600] shrink-0 group-hover/map:scale-110 transition-transform" />
+                 <p className="text-slate-400 text-sm leading-relaxed group-hover/map:text-white transition-colors">
                    {data.contact?.headOffice?.address}
                  </p>
-               </div>
+               </a>
                <div className="space-y-3">
                  {data.contact?.headOffice?.phones?.map((p: any, i: number) => (
                    <a key={i} href={`tel:${p.number}`} className="flex items-center gap-4 text-slate-400 hover:text-white transition-all group">
@@ -239,7 +275,7 @@ export default function Footer() {
                   <div className="absolute top-0 right-0 w-24 h-24 bg-[#FF6600]/10 rounded-full -mr-12 -mt-12 group-hover:scale-125 transition-transform duration-700" />
                   <div className="relative z-10">
                     <p className="text-white font-black text-sm mb-2">Zero-Damage Assurance</p>
-                    <p className="text-slate-400 text-[11px] leading-relaxed mb-6">Join 1000+ manufacturing leaders who trust Europack for global transit security.</p>
+                    <p className="text-slate-400 text-[11px] leading-relaxed mb-6">Join 3000+ manufacturing leaders who trust Europack for global transit security.</p>
                     <Link href="/contact" className="w-fit px-8 py-3 bg-[#FF6600] text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl flex items-center justify-center gap-2 hover:bg-[#e65c00] transition-colors">
                       Get a Quote <ArrowRight size={12} />
                     </Link>

@@ -8,7 +8,7 @@ const uploadFile = async (file: File) => {
   formData.append('file', file);
   
   const token = localStorage.getItem('adminToken');
-  const res = await fetch('http://localhost:5002/api/upload', {
+  const res = await fetch('/api/upload', {
     method: 'POST',
     headers: { 'Authorization': `Bearer ${token}` },
     body: formData
@@ -195,7 +195,7 @@ export default function BannersManager() {
                   <p style={{ margin: '0 0 1rem 0', fontWeight: 600, color: '#4A5568' }}>Upload Desktop Dimensions (e.g. 1920x1080)</p>
                   {banner.desktopImage ? (
                     <div style={{ position: 'relative', display: 'inline-block' }}>
-                      <img src={`http://localhost:5002/${banner.desktopImage}`} alt="Preview" style={{ maxWidth: '100%', maxHeight: '200px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} />
+                      <img src={`/${banner.desktopImage}`} alt="Preview" style={{ maxWidth: '100%', maxHeight: '200px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} />
                       <button onClick={() => handleUpdate(index, 'desktopImage', '')} style={{ position: 'absolute', top: '-10px', right: '-10px', background: 'red', color: 'white', border: 'none', borderRadius: '50%', width: '30px', height: '30px', cursor: 'pointer' }}>✕</button>
                     </div>
                   ) : (
@@ -211,7 +211,7 @@ export default function BannersManager() {
                   <p style={{ margin: '0 0 1rem 0', fontWeight: 600, color: '#4A5568' }}>Upload Tablet Dimensions (e.g. 1024x768)</p>
                   {banner.tabletImage ? (
                     <div style={{ position: 'relative', display: 'inline-block' }}>
-                      <img src={`http://localhost:5002/${banner.tabletImage}`} alt="Preview" style={{ maxWidth: '100%', maxHeight: '200px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} />
+                      <img src={`/${banner.tabletImage}`} alt="Preview" style={{ maxWidth: '100%', maxHeight: '200px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} />
                       <button onClick={() => handleUpdate(index, 'tabletImage', '')} style={{ position: 'absolute', top: '-10px', right: '-10px', background: 'red', color: 'white', border: 'none', borderRadius: '50%', width: '30px', height: '30px', cursor: 'pointer' }}>✕</button>
                     </div>
                   ) : (
@@ -227,7 +227,7 @@ export default function BannersManager() {
                   <p style={{ margin: '0 0 1rem 0', fontWeight: 600, color: '#4A5568' }}>Upload Mobile Dimensions (e.g. 480x800)</p>
                   {banner.mobileImage ? (
                     <div style={{ position: 'relative', display: 'inline-block' }}>
-                      <img src={`http://localhost:5002/${banner.mobileImage}`} alt="Preview" style={{ maxWidth: '100%', maxHeight: '200px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} />
+                      <img src={`/${banner.mobileImage}`} alt="Preview" style={{ maxWidth: '100%', maxHeight: '200px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} />
                       <button onClick={() => handleUpdate(index, 'mobileImage', '')} style={{ position: 'absolute', top: '-10px', right: '-10px', background: 'red', color: 'white', border: 'none', borderRadius: '50%', width: '30px', height: '30px', cursor: 'pointer' }}>✕</button>
                     </div>
                   ) : (
